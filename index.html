@@ -393,7 +393,18 @@
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.7s ease, transform 0.7s ease;
+    animation: h1FallbackReveal 0.7s ease forwards;
   }
+
+  @keyframes h1FallbackReveal {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  #h1line1 { animation-delay: 0.3s; }
+  #h1line2 { animation-delay: 0.65s; }
+  #h1line3 { animation-delay: 1.0s; }
+  #h1line4 { animation-delay: 1.35s; }
 
   .h1-line.visible {
     opacity: 1;
