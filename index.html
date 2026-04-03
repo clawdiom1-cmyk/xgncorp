@@ -73,6 +73,121 @@ ul{list-style:none}
 .rv-r.in{opacity:1;transform:none}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
 .d4{transition-delay:.32s}.d5{transition-delay:.40s}.d6{transition-delay:.48s}
+/* ══════════════════════════════════════════════════
+   ANIMATION LAYER — STRIPE-LEVEL DEPTH
+══════════════════════════════════════════════════ */
+
+/* Cursor glow follower */
+#cursor-glow{position:fixed;width:160px;height:160px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,112,243,.14) 0%,transparent 70%);
+  pointer-events:none;z-index:9999;top:0;left:0;
+  transform:translate(-50%,-50%);transition:opacity .3s;
+  will-change:transform}
+#cursor-glow.on-light{background:radial-gradient(circle,rgba(0,0,0,.06) 0%,transparent 70%)}
+
+/* Hero dot grid */
+.hero-dot-grid{position:absolute;inset:0;pointer-events:none;z-index:1;
+  background-image:radial-gradient(circle,rgba(255,255,255,.055) 1px,transparent 1px);
+  background-size:28px 28px;will-change:transform}
+
+/* Hero diagonal accent lines */
+.hero-lines{position:absolute;bottom:0;right:0;width:320px;height:260px;
+  pointer-events:none;z-index:1;overflow:hidden}
+.hero-lines svg path{stroke:rgba(0,112,243,.22);stroke-width:1;fill:none;
+  stroke-dasharray:600;stroke-dashoffset:600;
+  animation:drawLine .9s cubic-bezier(.16,1,.3,1) forwards}
+.hero-lines svg path:nth-child(2){animation-delay:.25s}
+@keyframes drawLine{to{stroke-dashoffset:0}}
+
+/* Hero floating orbs */
+.orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(40px);z-index:1;
+  will-change:transform}
+.orb1{width:180px;height:180px;background:rgba(0,112,243,.1);top:15%;left:8%;
+  animation:orbDrift1 10s ease-in-out infinite alternate}
+.orb2{width:260px;height:260px;background:rgba(0,30,100,.09);top:55%;right:6%;
+  animation:orbDrift2 14s ease-in-out infinite alternate}
+.orb3{width:120px;height:120px;background:rgba(0,60,160,.08);bottom:20%;left:45%;
+  animation:orbDrift3 8s ease-in-out infinite alternate}
+@keyframes orbDrift1{from{transform:translate(0,0)}to{transform:translate(24px,-32px)}}
+@keyframes orbDrift2{from{transform:translate(0,0)}to{transform:translate(-28px,20px)}}
+@keyframes orbDrift3{from{transform:translate(0,0)}to{transform:translate(16px,-18px)}}
+
+/* Hero scale-in reveal */
+#hero .hero-content{opacity:0;transform:scale(.92);
+  animation:heroScale 1s cubic-bezier(.16,1,.3,1) .05s forwards}
+@keyframes heroScale{to{opacity:1;transform:scale(1)}}
+
+/* Credibility dot grid (white section) */
+.cred-dot-grid{position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(0,0,0,.03) 1px,transparent 1px);
+  background-size:28px 28px}
+
+/* Problem corner orb */
+.prob-corner-orb{position:absolute;top:-60px;right:-40px;width:380px;height:380px;
+  border-radius:50%;background:rgba(0,112,243,.055);filter:blur(80px);pointer-events:none}
+
+/* Bento card 3D tilt — parent perspective */
+.bento{perspective:1200px}
+.bc{transform-style:preserve-3d;will-change:transform}
+/* specular highlight layer inside card */
+.bc-specular{position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(circle 120px at 50% 50%,rgba(255,255,255,.1),transparent 70%);
+  opacity:0;transition:opacity .3s;z-index:0}
+.bc{position:relative}
+
+/* Who cards — same 3D */
+.who-card{transform-style:preserve-3d;will-change:transform}
+.who-specular{position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(circle 100px at 50% 50%,rgba(0,112,243,.08),transparent 70%);
+  opacity:0;transition:opacity .3s;z-index:0}
+
+/* Process section code-line background */
+#process::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(to bottom,
+    transparent 0px,transparent 30px,
+    rgba(255,255,255,.025) 30px,rgba(255,255,255,.025) 31px);z-index:0}
+#process{position:relative}
+#process .container{position:relative;z-index:1}
+
+/* Results ghost numbers */
+.bn-ghost{position:absolute;font-family:var(--fh);font-size:22rem;font-weight:800;
+  letter-spacing:-.06em;color:rgba(0,0,0,.028);line-height:1;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  pointer-events:none;user-select:none;white-space:nowrap}
+.bn-item{position:relative}
+
+/* Results numbers scale-up entrance */
+.bn-num{display:block;opacity:0;transform:scale(.7);
+  transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.bn-num.in{opacity:1;transform:scale(1)}
+
+/* CTA particles */
+.cta-particle{position:absolute;width:2px;height:2px;border-radius:50%;
+  background:rgba(0,112,243,.3);pointer-events:none;will-change:transform}
+
+/* Section dissolve overlays */
+.dissolve-bottom{position:absolute;bottom:0;left:0;right:0;height:80px;
+  pointer-events:none;z-index:5}
+.dissolve-top{position:absolute;top:0;left:0;right:0;height:80px;
+  pointer-events:none;z-index:5}
+/* dark→light */
+.fade-to-dark{background:linear-gradient(to bottom,transparent,#000)}
+.fade-from-dark{background:linear-gradient(to bottom,#000,transparent)}
+
+/* Industry row mouse-track line */
+.ind-mouse-line{position:absolute;left:0;right:0;height:1px;
+  background:rgba(0,112,243,.35);pointer-events:none;opacity:0;transition:opacity .15s}
+.ind-row{position:relative;overflow:hidden}
+.ind-row:hover .ind-mouse-line{opacity:1}
+
+/* Magnetic btn enhanced glow */
+.btn-blue.magnetic-glow-active{
+  animation:btnGlowPulse .35s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes btnGlowPulse{
+  0%{box-shadow:0 0 0 0 rgba(0,112,243,.5)}
+  60%{box-shadow:0 0 0 14px rgba(0,112,243,0)}
+  100%{box-shadow:0 0 0 0 rgba(0,112,243,0)}}
+
 /* hero word stagger */
 .hw{display:inline-block;opacity:0;transform:translateY(40px);
     transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
@@ -520,8 +635,24 @@ footer{background:var(--black);border-top:1px solid var(--blue);padding:40px 0}
 </div>
 
 <!-- ░░░ §1 HERO ░░░ -->
+<!-- Cursor glow follower -->
+<div id="cursor-glow"></div>
+
 <section id="hero">
   <div class="hero-mesh" id="heroMesh"></div>
+  <div class="hero-mesh" id="heroMesh2" style="opacity:.5;animation-delay:-5s;animation-direction:reverse"></div>
+  <div class="hero-dot-grid" id="heroDotGrid"></div>
+  <!-- Floating orbs -->
+  <div class="orb orb1" id="orb1"></div>
+  <div class="orb orb2" id="orb2"></div>
+  <div class="orb orb3" id="orb3"></div>
+  <!-- Diagonal accent lines -->
+  <div class="hero-lines">
+    <svg width="320" height="260" viewBox="0 0 320 260" style="animation-delay:1.5s">
+      <path d="M320,80 L120,260"/>
+      <path d="M320,140 L200,260"/>
+    </svg>
+  </div>
   <div class="hero-content" id="heroContent">
 
     <div class="hero-eyebrow rv">
@@ -567,7 +698,8 @@ footer{background:var(--black);border-top:1px solid var(--blue);padding:40px 0}
 </section>
 
 <!-- ░░░ §2 CREDIBILITY + STATS ░░░ -->
-<section id="cred" class="section-light">
+<section id="cred" class="section-light" style="position:relative">
+  <div class="cred-dot-grid"></div>
   <div class="cred-ticker">
     <div class="ticker-track">
       <span class="tick-item"><span class="tick-dot"></span><span class="tick-text" data-en="Client signed — no sales call needed" data-es="Cliente firmado — sin llamada de ventas">Client signed — no sales call needed</span></span>
@@ -606,7 +738,8 @@ footer{background:var(--black);border-top:1px solid var(--blue);padding:40px 0}
 </section>
 
 <!-- ░░░ §3 PROBLEM ░░░ -->
-<section id="problem">
+<section id="problem" style="position:relative">
+  <div class="prob-corner-orb"></div>
   <div class="container">
     <div class="problem-headline rv">
       <span class="label-mono label-blue" style="display:block;margin-bottom:20px"
@@ -673,7 +806,7 @@ footer{background:var(--black);border-top:1px solid var(--blue);padding:40px 0}
 
     <div class="bento">
       <!-- LARGE — Intake -->
-      <div class="bc bc-a rv-l d1">
+      <div class="bc bc-a rv-l d1"><div class="bc-specular"></div>
         <span class="bc-num">01 — AI INTAKE &amp; BOOKING</span>
         <div class="bc-title" data-en="Your Front Desk. Runs Itself." data-es="Tu Recepción. Se Administra Sola.">Your Front Desk. Runs Itself.</div>
         <div class="bc-body"
@@ -685,7 +818,7 @@ footer{background:var(--black);border-top:1px solid var(--blue);padding:40px 0}
       </div>
 
       <!-- MEDIUM — Follow-Up -->
-      <div class="bc bc-b rv-r d2">
+      <div class="bc bc-b rv-r d2"><div class="bc-specular"></div>
         <span class="bc-num">02 — AI FOLLOW-UP ENGINE</span>
         <div class="bc-title" data-en="Your Sales Team. Without the Payroll." data-es="Tu Equipo de Ventas. Sin la Nómina.">Your Sales Team. Without the Payroll.</div>
         <div class="bc-body"
@@ -697,7 +830,7 @@ footer{background:var(--black);border-top:1px solid var(--blue);padding:40px 0}
       </div>
 
       <!-- MEDIUM — Inbound Capture -->
-      <div class="bc bc-c rv-l d3">
+      <div class="bc bc-c rv-l d3"><div class="bc-specular"></div>
         <span class="bc-num">03 — INBOUND CAPTURE</span>
         <div class="bc-title" data-en="Every Touchpoint. A Pipeline Entry." data-es="Cada Punto de Contacto. Una Entrada al Pipeline.">Every Touchpoint. A Pipeline Entry.</div>
         <div class="bc-body"
@@ -709,7 +842,7 @@ footer{background:var(--black);border-top:1px solid var(--blue);padding:40px 0}
       </div>
 
       <!-- LARGE — Content -->
-      <div class="bc bc-d rv-r d4">
+      <div class="bc bc-d rv-r d4"><div class="bc-specular"></div>
         <span class="bc-num">04 — AI CONTENT ENGINE</span>
         <div class="bc-title" data-en="Authority. At Scale. On Autopilot." data-es="Autoridad. A Escala. En Piloto Automático.">Authority. At Scale. On Autopilot.</div>
         <div class="bc-body"
@@ -721,7 +854,7 @@ footer{background:var(--black);border-top:1px solid var(--blue);padding:40px 0}
       </div>
 
       <!-- WIDE — Ops Intelligence -->
-      <div class="bc bc-wide rv d5">
+      <div class="bc bc-wide rv d5"><div class="bc-specular"></div>
         <div class="bc-wide-inner">
           <div>
             <span class="bc-num">05 — OPS INTELLIGENCE LAYER</span>
@@ -797,7 +930,7 @@ footer{background:var(--black);border-top:1px solid var(--blue);padding:40px 0}
           data-es="Sabrás de Inmediato Si Esto Es Para Ti.">You'll Know Immediately If This Is You.</h2>
     </div>
     <div class="who-grid">
-      <div class="who-card rv d1">
+      <div class="who-card rv d1"><div class="who-specular"></div>
         <span class="who-icon">🏗️</span>
         <div class="who-title" data-en="The Construction Operator" data-es="El Operador de Construcción">The Construction Operator</div>
         <div class="who-body"
@@ -805,7 +938,7 @@ footer{background:var(--black);border-top:1px solid var(--blue);padding:40px 0}
              data-es="Haces $800K–$5M en ingresos. Tu mayor problema no son los leads — es el seguimiento, la programación y el caos operativo. Las cotizaciones salen y no regresan. Has intentado contratar más personas y solo se volvió más caro.">You're doing $800K–$5M in revenue. Your biggest problem isn't leads — it's follow-up, scheduling, and ops chaos. Quotes go out and never come back. You're managing jobs in your head. You've tried hiring your way out of it and it only got more expensive.</div>
         <span class="who-gain" data-en="→ AI handles dispatch, follow-up, and intake. You close the jobs." data-es="→ La IA gestiona despacho, seguimiento e intake. Tú cierras los trabajos.">→ AI handles dispatch, follow-up, and intake. You close the jobs.</span>
       </div>
-      <div class="who-card rv d2">
+      <div class="who-card rv d2"><div class="who-specular"></div>
         <span class="who-icon">🏨</span>
         <div class="who-title" data-en="The Hospitality Owner" data-es="El Propietario de Hospitalidad">The Hospitality Owner</div>
         <div class="who-body"
@@ -813,7 +946,7 @@ footer{background:var(--black);border-top:1px solid var(--blue);padding:40px 0}
              data-es="Administras un restaurante, hotel o espacio de eventos. Tu personal está agotado por tareas repetitivas. Reservas, upsells, reseñas y seguimiento son manuales. Tus márgenes son ajustados.">You run a restaurant, hotel, or events venue. Your staff is burned out from repetitive tasks. Reservations, upsells, reviews, and follow-up are all manual. Your margins are tight and every missed upsell hurts.</div>
         <span class="who-gain" data-en="→ AI automates reservations, upsells, and review management." data-es="→ La IA automatiza reservas, upsells y gestión de reseñas.">→ AI automates reservations, upsells, and review management.</span>
       </div>
-      <div class="who-card rv d3">
+      <div class="who-card rv d3"><div class="who-specular"></div>
         <span class="who-icon">📱</span>
         <div class="who-title" data-en="The Marketing Agency Founder" data-es="El Fundador de Agencia de Marketing">The Marketing Agency Founder</div>
         <div class="who-body"
@@ -821,7 +954,7 @@ footer{background:var(--black);border-top:1px solid var(--blue);padding:40px 0}
              data-es="Entregas resultados para clientes pero tus propias operaciones están sostenidas con hojas de cálculo. El onboarding tarda semanas. Los reportes son manuales. Estás limitado en clientes porque estás atascado en la entrega.">You deliver results for clients but your own ops are held together with spreadsheets. Onboarding takes weeks. Reporting is manual. You're capped on clients because you're stuck in delivery. Your team is good — your systems aren't.</div>
         <span class="who-gain" data-en="→ AI scales your delivery. Same team. 3× the clients." data-es="→ La IA escala tu entrega. El mismo equipo. 3× los clientes.">→ AI scales your delivery. Same team. 3× the clients.</span>
       </div>
-      <div class="who-card rv d4">
+      <div class="who-card rv d4"><div class="who-specular"></div>
         <span class="who-icon">💻</span>
         <div class="who-title" data-en="The Tech Founder / SaaS Operator" data-es="El Fundador Tech / Operador SaaS">The Tech Founder / SaaS Operator</div>
         <div class="who-body"
@@ -845,6 +978,7 @@ footer{background:var(--black);border-top:1px solid var(--blue);padding:40px 0}
     </div>
     <div class="ind-list">
       <div class="ind-row open" id="ind0">
+        <div class="ind-mouse-line" id="iml0"></div>
         <div class="ind-trigger" onclick="toggleInd(0)">
           <div class="ind-left"><span class="ind-n">01</span><span class="ind-name" data-en="Construction" data-es="Construcción">Construction</span></div>
           <span class="ind-arrow" data-en="OPEN →" data-es="ABRIR →">OPEN →</span>
@@ -875,6 +1009,7 @@ footer{background:var(--black);border-top:1px solid var(--blue);padding:40px 0}
       </div>
 
       <div class="ind-row" id="ind1">
+        <div class="ind-mouse-line" id="iml1"></div>
         <div class="ind-trigger" onclick="toggleInd(1)">
           <div class="ind-left"><span class="ind-n">02</span><span class="ind-name" data-en="Hospitality" data-es="Hospitalidad">Hospitality</span></div>
           <span class="ind-arrow" data-en="OPEN →" data-es="ABRIR →">OPEN →</span>
@@ -905,6 +1040,7 @@ footer{background:var(--black);border-top:1px solid var(--blue);padding:40px 0}
       </div>
 
       <div class="ind-row" id="ind2">
+        <div class="ind-mouse-line" id="iml2"></div>
         <div class="ind-trigger" onclick="toggleInd(2)">
           <div class="ind-left"><span class="ind-n">03</span><span class="ind-name" data-en="Marketing" data-es="Marketing">Marketing</span></div>
           <span class="ind-arrow" data-en="OPEN →" data-es="ABRIR →">OPEN →</span>
@@ -935,6 +1071,7 @@ footer{background:var(--black);border-top:1px solid var(--blue);padding:40px 0}
       </div>
 
       <div class="ind-row" id="ind3">
+        <div class="ind-mouse-line" id="iml3"></div>
         <div class="ind-trigger" onclick="toggleInd(3)">
           <div class="ind-left"><span class="ind-n">04</span><span class="ind-name" data-en="Tech / SaaS" data-es="Tech / SaaS">Tech / SaaS</span></div>
           <span class="ind-arrow" data-en="OPEN →" data-es="ABRIR →">OPEN →</span>
@@ -983,14 +1120,17 @@ footer{background:var(--black);border-top:1px solid var(--blue);padding:40px 0}
     </div>
     <div class="big-nums rv d1">
       <div class="bn-item">
+        <span class="bn-ghost">$20K</span>
         <span class="bn-num">$<span class="cu" data-target="20">0</span>K+</span>
         <span class="bn-label" data-en="MONTHLY REVENUE INCREASE PER CLIENT" data-es="AUMENTO DE INGRESOS MENSUALES POR CLIENTE">MONTHLY REVENUE INCREASE<br>PER CLIENT</span>
       </div>
       <div class="bn-item">
+        <span class="bn-ghost">5–8×</span>
         <span class="bn-num"><span class="cu" data-target="5">0</span>–8×</span>
         <span class="bn-label" data-en="RETURN ON AUTOMATION INVESTMENT" data-es="RETORNO EN INVERSIÓN DE AUTOMATIZACIÓN">RETURN ON<br>AUTOMATION INVESTMENT</span>
       </div>
       <div class="bn-item">
+        <span class="bn-ghost">45</span>
         <span class="bn-num"><span class="cu" data-target="45">0</span></span>
         <span class="bn-label" data-en="DAYS FROM AUDIT TO FULL DEPLOYMENT" data-es="DÍAS DE AUDITORÍA A IMPLEMENTACIÓN COMPLETA">DAYS FROM AUDIT<br>TO FULL DEPLOYMENT</span>
       </div>
@@ -1237,6 +1377,129 @@ footer{background:var(--black);border-top:1px solid var(--blue);padding:40px 0}
 ══════════════════════════════════════════════════ -->
 <script>
 'use strict';
+
+/* ============================================================
+   SINGLE RAF LOOP + STRIPE-LEVEL ANIMATION LAYER
+============================================================ */
+const _mouse={x:window.innerWidth/2,y:window.innerHeight/2};
+const _lp={cx:window.innerWidth/2,cy:window.innerHeight/2,mx1x:0,mx1y:0,mx2x:0,mx2y:0,hcx:0,hcy:0};
+const isPointerFine=window.matchMedia('(pointer:fine)').matches;
+document.addEventListener('mousemove',e=>{_mouse.x=e.clientX;_mouse.y=e.clientY;},{passive:true});
+
+const _cg=document.getElementById('cursor-glow');
+const _hm=document.getElementById('heroMesh');
+const _hm2=document.getElementById('heroMesh2');
+const _hdg=document.getElementById('heroDotGrid');
+const _hc=document.getElementById('heroContent');
+const _o1=document.getElementById('orb1');
+const _o2=document.getElementById('orb2');
+const _o3=document.getElementById('orb3');
+
+(function raf(){
+  const mxN=(_mouse.x-window.innerWidth/2)/window.innerWidth;
+  const myN=(_mouse.y-window.innerHeight/2)/window.innerHeight;
+  // cursor glow
+  _lp.cx+=(_mouse.x-_lp.cx)*.09; _lp.cy+=(_mouse.y-_lp.cy)*.09;
+  if(_cg){_cg.style.left=_lp.cx+'px';_cg.style.top=_lp.cy+'px';}
+  // hero mesh 2-layer parallax
+  _lp.mx1x+=(mxN*22-_lp.mx1x)*.045; _lp.mx1y+=(myN*22-_lp.mx1y)*.045;
+  _lp.mx2x+=(mxN*-16-_lp.mx2x)*.03; _lp.mx2y+=(myN*-16-_lp.mx2y)*.03;
+  if(_hm)_hm.style.transform=`translate(${_lp.mx1x}px,${_lp.mx1y}px)`;
+  if(_hm2)_hm2.style.transform=`translate(${_lp.mx2x}px,${_lp.mx2y}px)`;
+  // dot grid
+  _lp.hcx+=(mxN*7-_lp.hcx)*.04; _lp.hcy+=(myN*7-_lp.hcy)*.04;
+  if(_hdg)_hdg.style.transform=`translate(${_lp.hcx}px,${_lp.hcy}px)`;
+  // hero content slight movement
+  if(_hc)_hc.style.transform=`translate(${_lp.mx1x*.22}px,${_lp.mx1y*.22}px)`;
+  // orbs
+  if(_o1)_o1.style.marginLeft=mxN*10+'px';
+  if(_o2)_o2.style.marginLeft=mxN*-8+'px';
+  if(_o3)_o3.style.marginLeft=mxN*6+'px';
+  requestAnimationFrame(raf);
+})();
+
+/* CTA PARTICLES */
+(function(){
+  const ctaEl=document.getElementById('cta');
+  if(!ctaEl)return;
+  const s=document.createElement('style');
+  s.textContent='@keyframes pD0{from{transform:translate(0,0)}to{transform:translate(18px,-22px)}}'+
+    '@keyframes pD1{from{transform:translate(0,0)}to{transform:translate(-20px,16px)}}'+
+    '@keyframes pD2{from{transform:translate(0,0)}to{transform:translate(12px,24px)}}'+
+    '@keyframes pD3{from{transform:translate(0,0)}to{transform:translate(-14px,-18px)}}';
+  document.head.appendChild(s);
+  const parts=[];
+  for(let i=0;i<26;i++){
+    const p=document.createElement('div');
+    p.className='cta-particle';
+    const ox=Math.random()*100,oy=Math.random()*100;
+    p.style.cssText=`left:${ox}%;top:${oy}%;animation:pD${i%4} ${8+Math.random()*14}s ease-in-out ${Math.random()*4}s infinite alternate`;
+    ctaEl.appendChild(p);
+    parts.push({el:p,ox,oy});
+  }
+  ctaEl.addEventListener('mousemove',e=>{
+    const r=ctaEl.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top;
+    parts.forEach(p=>{
+      const px=p.ox/100*r.width,py=p.oy/100*r.height,dx=px-mx,dy=py-my,d=Math.sqrt(dx*dx+dy*dy);
+      p.el.style.transform=d<110?`translate(${dx/d*(110-d)/110*28}px,${dy/d*(110-d)/110*28}px)`:'';
+    });
+  },{passive:true});
+  ctaEl.addEventListener('mouseleave',()=>parts.forEach(p=>p.el.style.transform=''));
+})();
+
+/* 3D CARD TILT */
+if(isPointerFine){
+  document.querySelectorAll('.bc,.who-card').forEach(card=>{
+    const spec=card.querySelector('.bc-specular,.who-specular');
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(900px) rotateX(${y*-8}deg) rotateY(${x*8}deg) translateY(-3px)`;
+      card.style.transition='transform .15s cubic-bezier(.4,0,.2,1)';
+      if(spec){spec.style.background=`radial-gradient(circle 130px at ${e.clientX-r.left}px ${e.clientY-r.top}px,rgba(255,255,255,.12),transparent 65%)`;spec.style.opacity='1';}
+    });
+    card.addEventListener('mouseleave',()=>{
+      card.style.transform='';card.style.transition='transform .6s cubic-bezier(.16,1,.3,1)';
+      if(spec)spec.style.opacity='0';
+    });
+  });
+}
+
+/* ENHANCED MAGNETIC BUTTONS */
+document.querySelectorAll('.magnetic').forEach(btn=>{
+  btn.addEventListener('mouseenter',()=>{
+    btn.classList.add('magnetic-glow-active');
+    setTimeout(()=>btn.classList.remove('magnetic-glow-active'),400);
+  });
+  btn.addEventListener('mousemove',e=>{
+    const r=btn.getBoundingClientRect();
+    btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.35}px,${(e.clientY-r.top-r.height/2)*.35}px)`;
+  });
+  btn.addEventListener('mouseleave',()=>{btn.style.transform='';});
+});
+
+/* RESULTS SCALE REVEAL */
+const bnObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.bn-num').forEach((n,i)=>setTimeout(()=>n.classList.add('in'),i*120));
+      bnObs.unobserve(e.target);
+    }
+  });
+},{threshold:.3});
+const bnSection=document.querySelector('.big-nums');
+if(bnSection)bnObs.observe(bnSection);
+
+/* INDUSTRY ROW MOUSE-TRACK LINE */
+[0,1,2,3].forEach(i=>{
+  const row=document.getElementById('ind'+i);
+  const line=document.getElementById('iml'+i);
+  if(!row||!line)return;
+  row.addEventListener('mousemove',e=>{
+    line.style.top=(e.clientY-row.getBoundingClientRect().top)+'px';
+  },{passive:true});
+});
+
 
 /* ── LANG ──────────────────────────────────────────────────── */
 let lang = 'en';
