@@ -2,737 +2,1151 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>XGN Corp — AI Integration for Ambitious Businesses</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XGN — X Growth Network | AI Business Exponentiation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
---white:#ffffff;--near-white:#f9fafb;--light:#f3f4f6;
---border:rgba(0,0,0,0.07);--border-strong:rgba(0,0,0,0.12);
---text-1:#0a0a0a;--text-2:#374151;--text-3:#6b7280;--text-4:#9ca3af;
---gold:#F5C000;--gold-bg:rgba(245,192,0,0.07);--gold-border:rgba(245,192,0,0.3);--gold-glow:rgba(245,192,0,0.35);
+  --w:#ffffff;--off:#f8f8f8;--light:#f2f2f2;
+  --b:rgba(0,0,0,0.07);--bstrong:rgba(0,0,0,0.12);
+  --t1:#09090b;--t2:#3f3f46;--t3:#71717a;--t4:#a1a1aa;
+  --gold:#f5c000;--gold8:rgba(245,192,0,0.08);--gold20:rgba(245,192,0,0.20);
+  --gold-glow:rgba(245,192,0,0.45);
 }
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;color:var(--text-1);background:#fff;-webkit-font-smoothing:antialiased}
-a{text-decoration:none;color:inherit}
-.container{max-width:1120px;margin:0 auto;padding:0 24px}
-.label{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
-h2{font-size:clamp(2.25rem,4vw,3.75rem);font-weight:800;letter-spacing:-0.04em;color:var(--text-1);margin-bottom:20px}
-h3{font-size:1.375rem;font-weight:700;letter-spacing:-0.02em}
-p.body-text,p.sub{font-size:1.0625rem;font-weight:400;line-height:1.75;color:var(--text-2)}
-section{padding:144px 0}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--w);color:var(--t1);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none}
+img{display:block;max-width:100%}
+.container{max-width:1160px;margin:0 auto;padding:0 28px}
 
-/* CARDS */
-.card{background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:0 1px 2px rgba(0,0,0,0.04),0 4px 16px rgba(0,0,0,0.03);transition:all 0.28s cubic-bezier(0.4,0,0.2,1)}
-.card:hover{transform:translateY(-5px);box-shadow:0 8px 32px rgba(0,0,0,0.08)}
-
-/* BUTTONS */
-.btn-gold{display:inline-block;background:#F5C000;color:#0a0a0a;padding:15px 30px;border-radius:10px;font-weight:700;font-size:1rem;border:none;cursor:pointer;transition:all 0.2s cubic-bezier(0.4,0,0.2,1)}
-.btn-gold:hover{box-shadow:0 4px 24px var(--gold-glow);transform:translateY(-2px)}
-.btn-black{display:inline-block;background:#0a0a0a;color:#fff;padding:15px 30px;border-radius:10px;font-weight:700;font-size:1rem;border:none;cursor:pointer;transition:all 0.2s cubic-bezier(0.4,0,0.2,1)}
-.btn-black:hover{background:#1a1a1a;box-shadow:0 4px 20px rgba(0,0,0,0.25);transform:translateY(-2px)}
-.btn-ghost{display:inline-block;background:transparent;color:var(--text-2);padding:15px 24px;font-weight:500;font-size:1rem;border:none;cursor:pointer;transition:all 0.2s cubic-bezier(0.4,0,0.2,1)}
-.btn-ghost:hover{color:var(--text-1)}
-
-/* ANIMATIONS */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1)}
-.reveal.in{opacity:1;transform:none}
-.d1{transition-delay:0.05s}.d2{transition-delay:0.12s}.d3{transition-delay:0.19s}.d4{transition-delay:0.26s}.d5{transition-delay:0.33s}
-
-/* h1 lines */
-.hl{display:block;opacity:0;transform:translateY(36px);animation:hlIn 0.8s cubic-bezier(0.16,1,0.3,1) forwards}
-@keyframes hlIn{to{opacity:1;transform:none}}
-#l1{animation-delay:0.1s}#l2{animation-delay:0.38s}#l3{animation-delay:0.66s}#l4{animation-delay:0.94s}
-
-/* Word reveal */
-.w{display:inline-block;opacity:0;transform:translateY(18px);transition:opacity 0.5s cubic-bezier(0.16,1,0.3,1),transform 0.5s cubic-bezier(0.16,1,0.3,1)}
-.w.in{opacity:1;transform:none}
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.05s}.d2{transition-delay:.12s}.d3{transition-delay:.19s}
+.d4{transition-delay:.26s}.d5{transition-delay:.33s}.d6{transition-delay:.40s}
 
 /* ── NAV ── */
-#navbar{position:sticky;top:0;z-index:1000;height:66px;background:rgba(255,255,255,0.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);transition:border-color 0.3s}
-#navbar.scrolled{border-bottom:1px solid var(--border)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
-.nav-logo span:first-child{font-size:1.2rem;font-weight:900;letter-spacing:-0.04em}
-.nav-logo span:last-child{font-size:0.6rem;font-weight:700;letter-spacing:0.12em;color:#F5C000;margin-left:8px}
-.nav-links{display:flex;gap:28px}
-.nav-links a{font-size:0.875rem;font-weight:500;color:var(--text-3);transition:color 0.2s}
-.nav-links a:hover{color:var(--text-1)}
-.nav-right{display:flex;align-items:center;gap:12px}
-.lang-btn{font-size:0.75rem;font-weight:600;background:transparent;border:none;color:var(--text-3);cursor:pointer;transition:color 0.2s}
-.lang-btn.active{color:var(--text-1)}
-.lang-sep{color:var(--text-4);font-size:0.75rem}
-.nav-cta{background:#0a0a0a;color:#fff!important;padding:9px 18px;border-radius:8px;font-size:0.8125rem;font-weight:600;transition:background 0.2s}
-.nav-cta:hover{background:#1a1a1a}
-#ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-#ham span{display:block;width:22px;height:2px;background:var(--text-1);border-radius:2px}
-#mobile-menu{display:none;position:absolute;top:66px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:20px 24px;flex-direction:column;gap:16px}
-#mobile-menu.open{display:flex}
-#mobile-menu a{font-size:1rem;font-weight:500;color:var(--text-2)}
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;display:flex;align-items:center;
+background:rgba(255,255,255,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+border-bottom:1px solid transparent;transition:border-color .2s}
+#nav.sc{border-color:var(--b)}
+.nav-i{display:flex;align-items:center;justify-content:space-between;width:100%}
+.nav-logo{display:flex;align-items:baseline;gap:7px}
+.nav-logo-x{font-size:1.3rem;font-weight:900;letter-spacing:-.04em;color:var(--t1)}
+.nav-logo-s{font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:.875rem;font-weight:500;color:var(--t3);transition:color .15s}
+.nav-links a:hover{color:var(--t1)}
+.nav-r{display:flex;align-items:center;gap:14px}
+.lang-wrap{display:flex;background:var(--light);border-radius:6px;padding:3px;gap:2px}
+.lang-btn{font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:4px;border:none;background:transparent;color:var(--t3);cursor:pointer;transition:all .15s}
+.lang-btn.on{background:white;color:var(--t1);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.nav-cta{font-size:.8125rem;font-weight:600;padding:9px 18px;border-radius:8px;background:var(--t1);color:white;transition:all .2s}
+.nav-cta:hover{background:#18181b;box-shadow:0 3px 14px rgba(0,0,0,.2)}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.ham span{display:block;width:22px;height:2px;background:var(--t1);border-radius:2px;transition:all .2s}
+#mob-menu{display:none;flex-direction:column;position:fixed;top:64px;left:0;right:0;z-index:199;
+background:white;border-bottom:1px solid var(--b);padding:20px 28px;gap:16px}
+#mob-menu.open{display:flex}
+#mob-menu a{font-size:1rem;font-weight:600;color:var(--t1)}
+#mob-menu .mob-cta{margin-top:4px;display:inline-block;padding:13px 24px;border-radius:9px;background:var(--t1);color:white;font-weight:700;text-align:center}
 
 /* ── TICKER ── */
-.ticker{background:#f3f4f6;border-top:1px solid var(--border);border-bottom:1px solid var(--border);height:42px;overflow:hidden;display:flex;align-items:center}
-.ticker-inner{display:flex;animation:marquee 32s linear infinite;white-space:nowrap}
+.ticker{background:var(--off);border-top:1px solid var(--b);border-bottom:1px solid var(--b);height:40px;overflow:hidden;display:flex;align-items:center}
+.ticker-inner{display:flex;white-space:nowrap;animation:tick 36s linear infinite}
 .ticker-inner:hover{animation-play-state:paused}
-.ticker-item{font-size:0.8125rem;font-weight:500;color:var(--text-2);padding:0 24px}
-.ticker-sep{color:var(--gold);padding:0 4px}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.tick-item{display:inline-flex;align-items:center;gap:10px;padding:0 20px;font-size:.8125rem;font-weight:500;color:var(--t2)}
+.tick-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
 
 /* ── HERO ── */
-#hero{background:radial-gradient(ellipse 90% 70% at 65% 20%,rgba(245,192,0,0.06) 0%,transparent 55%),radial-gradient(ellipse 50% 40% at 10% 90%,rgba(245,192,0,0.03) 0%,transparent 50%),#fff;padding:96px 0 80px;text-align:center}
-#hero h1{font-size:clamp(4rem,9vw,8.5rem);font-weight:900;letter-spacing:-0.05em;line-height:0.92;color:#0a0a0a;margin-top:28px}
-#hero h1 .gold{color:#F5C000}
-.hero-sub{margin-top:32px;max-width:560px;margin-left:auto;margin-right:auto;font-size:1.125rem;line-height:1.75;color:var(--text-3)}
-.hero-cta{margin-top:40px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.hero-trust{margin-top:18px;font-size:0.85rem;color:var(--text-4)}
-.pill-sm{display:inline-block;background:#fef3c7;color:#92700a;border-radius:100px;padding:4px 14px;font-size:0.75rem;font-weight:600;margin-top:8px}
-.hero-stats{margin-top:80px;border-top:1px solid var(--border);padding-top:56px;display:grid;grid-template-columns:repeat(3,1fr)}
-.stat{text-align:center}
-.stat:not(:last-child){border-right:1px solid var(--border)}
-.stat-num{font-size:clamp(2.75rem,5vw,4.5rem);font-weight:900;color:#0a0a0a;letter-spacing:-0.04em;line-height:1}
-.stat-label{font-size:0.875rem;color:var(--text-3);margin-top:10px;max-width:180px;margin-left:auto;margin-right:auto}
+#hero{padding-top:128px;padding-bottom:0;overflow:hidden;position:relative}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;min-height:620px}
+.hero-left{padding-bottom:80px}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--gold20);background:var(--gold8);
+color:#9a7500;font-size:.68rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+padding:7px 16px;border-radius:100px;margin-bottom:28px}
+.hero-pill span{width:6px;height:6px;border-radius:50%;background:var(--gold);display:block}
+.hero-h1{font-size:clamp(3.5rem,6.5vw,6.5rem);font-weight:900;letter-spacing:-.055em;line-height:.93;color:var(--t1)}
+.hero-h1 .hl{display:block;opacity:0;transform:translateY(32px);animation:hlIn .85s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes hlIn{to{opacity:1;transform:none}}
+#l1{animation-delay:.1s}#l2{animation-delay:.3s}#l3{animation-delay:.5s}
+#l4{animation-delay:.7s;color:var(--gold)}
+.hero-sub{font-size:1.0625rem;line-height:1.78;color:var(--t3);margin-top:28px;max-width:460px}
+.hero-ctas{display:flex;align-items:center;gap:14px;margin-top:36px;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:10px;
+background:var(--gold);color:var(--t1);font-size:.9375rem;font-weight:700;border:none;cursor:pointer;
+transition:all .22s cubic-bezier(.4,0,.2,1);text-decoration:none}
+.btn-gold:hover{box-shadow:0 4px 24px var(--gold-glow);transform:translateY(-2px)}
+.btn-outline{display:inline-flex;align-items:center;gap:7px;padding:14px 24px;border-radius:10px;
+background:white;color:var(--t1);font-size:.9375rem;font-weight:600;border:1px solid var(--bstrong);
+transition:all .22s cubic-bezier(.4,0,.2,1);text-decoration:none}
+.btn-outline:hover{border-color:var(--t1);transform:translateY(-2px)}
+.hero-trust{margin-top:20px;font-size:.825rem;color:var(--t4);display:flex;align-items:center;gap:10px}
+.hero-trust-pill{display:inline-block;background:#fef3c7;color:#92700a;border-radius:100px;
+padding:4px 13px;font-size:.72rem;font-weight:700}
 
-/* ── COST ── */
-#cost{background:var(--near-white)}
-.loss-card{margin-top:48px;max-width:520px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px 36px;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
-.loss-label{color:var(--text-3);font-size:0.875rem;margin-bottom:12px}
-#lossCounter{font-size:3.25rem;font-weight:900;color:#0a0a0a;font-variant-numeric:tabular-nums}
-.loss-sub{font-size:0.8125rem;color:var(--text-4);margin-top:10px}
-.pain-grid{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.pain-card{padding:28px;border-left:3px solid #F5C000}
-.pain-card h4{font-size:1rem;font-weight:700;color:var(--text-1);margin-bottom:12px}
-.pain-card p{font-size:0.9375rem;color:var(--text-3);line-height:1.7}
+/* hero right: live AI preview panel */
+.hero-right{position:relative;height:100%;display:flex;align-items:center}
+.hero-panel{background:white;border:1px solid var(--b);border-radius:20px;overflow:hidden;
+box-shadow:0 0 0 1px rgba(0,0,0,.04),0 20px 60px rgba(0,0,0,.1);width:100%;max-width:500px}
+.panel-header{background:var(--off);border-bottom:1px solid var(--b);padding:14px 20px;
+display:flex;align-items:center;gap:8px}
+.panel-dots{display:flex;gap:6px}
+.panel-dot{width:10px;height:10px;border-radius:50%}
+.panel-title{font-size:.78rem;font-weight:600;color:var(--t3);margin-left:8px}
+.panel-body{padding:24px}
+.panel-log{display:flex;flex-direction:column;gap:12px}
+.log-line{display:flex;align-items:flex-start;gap:12px;opacity:0;transform:translateX(-12px);
+transition:all .55s cubic-bezier(.16,1,.3,1)}
+.log-line.in{opacity:1;transform:none}
+.log-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;
+font-size:1rem;flex-shrink:0}
+.log-icon.blue{background:#eff6ff}
+.log-icon.green{background:#f0fdf4}
+.log-icon.gold{background:#fefce8}
+.log-text{flex:1}
+.log-label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t4)}
+.log-val{font-size:.9375rem;font-weight:600;color:var(--t1);margin-top:2px}
+.panel-divider{height:1px;background:var(--b);margin:4px 0}
+.panel-result{margin-top:16px;background:var(--gold8);border:1px solid var(--gold20);border-radius:12px;padding:16px}
+.panel-result-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a7500}
+.panel-result-val{font-size:1.5rem;font-weight:900;color:var(--t1);margin-top:4px;letter-spacing:-.03em}
+.panel-result-sub{font-size:.8125rem;color:var(--t3);margin-top:4px}
+/* chat bubbles */
+.panel-chat{display:flex;flex-direction:column;gap:10px;margin-top:20px;padding-top:16px;border-top:1px solid var(--b)}
+.bubble{max-width:80%;padding:10px 14px;font-size:.875rem;line-height:1.5;border-radius:14px}
+.bubble.recv{background:var(--light);color:var(--t2);border-radius:14px 14px 14px 4px;align-self:flex-start}
+.bubble.sent{background:var(--t1);color:white;border-radius:14px 14px 4px 14px;align-self:flex-end}
+.bubble-ts{font-size:.65rem;color:var(--t4);margin-top:4px;text-align:right}
+.auto-badge{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--t1);
+border-radius:8px;padding:7px 12px;font-size:.75rem;font-weight:700;margin-top:8px}
 
-/* ── FEATURES ── */
-.feature-row{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.feature-row+.feature-row{border-top:1px solid var(--border);padding-top:80px;margin-top:80px}
-.feature-tag{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-.feature-text h3{margin-bottom:16px}
-.feature-text p{font-size:0.9375rem;color:var(--text-3);line-height:1.75;margin-bottom:20px}
-.feature-text ul{list-style:none;padding:0}
-.feature-text ul li{font-size:0.9375rem;color:var(--text-2);line-height:1.9;padding-left:24px;position:relative}
-.feature-text ul li::before{content:'✓';color:var(--gold);font-weight:700;position:absolute;left:0}
-.demo-box{border-radius:16px;overflow:hidden;background:var(--near-white);border:1px solid var(--border);padding:24px}
-.demo-log{font-family:'Courier New',monospace;font-size:0.875rem;display:flex;flex-direction:column;gap:12px}
-.demo-log .log-line{display:flex;align-items:center;gap:10px;opacity:0;animation:fadeIn 0.5s cubic-bezier(0.16,1,0.3,1) forwards}
-.demo-log .log-line:nth-child(1){animation-delay:0.3s}
-.demo-log .log-line:nth-child(2){animation-delay:0.8s}
-.demo-log .log-line:nth-child(3){animation-delay:1.3s}
-@keyframes fadeIn{to{opacity:1}}
-.demo-log .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.dot-blue{background:#3b82f6}.dot-yellow{background:#F5C000}.dot-green{background:#22c55e}
+/* hero stats strip */
+.hero-stats{background:var(--off);border-top:1px solid var(--b);padding:40px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.stat-item{text-align:center;padding:8px 24px}
+.stat-item+.stat-item{border-left:1px solid var(--b)}
+.stat-num{font-size:clamp(2.25rem,4vw,3.75rem);font-weight:900;letter-spacing:-.04em;color:var(--t1);line-height:1}
+.stat-label{font-size:.875rem;color:var(--t3);margin-top:8px;max-width:170px;margin-left:auto;margin-right:auto;line-height:1.45}
 
-/* Chat bubbles */
-.chat-demo{display:flex;flex-direction:column;gap:10px}
-.bubble{padding:12px 16px;border-radius:18px;max-width:85%;font-size:0.9375rem;line-height:1.5}
-.bubble.recv{background:var(--light);border-bottom-left-radius:4px;align-self:flex-start;color:var(--text-1)}
-.bubble.sent{background:#0a0a0a;color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+/* ── SECTION BASE ── */
+.section{padding:128px 0}
+.section-label{display:inline-block;font-size:.67rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.section-h2{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spacing:-.04em;line-height:1.1;color:var(--t1)}
+.section-sub{font-size:1.0625rem;color:var(--t3);line-height:1.75;max-width:560px;margin-top:16px}
 
-/* IG DM mock */
-.ig-header{font-weight:600;font-size:0.875rem;border-bottom:1px solid var(--border);padding-bottom:12px;margin-bottom:12px}
-.ig-msg{font-size:0.9375rem;color:var(--text-2);margin-bottom:8px}
-.ig-badge{background:#F5C000;color:#0a0a0a;border-radius:8px;padding:8px 12px;font-size:0.75rem;font-weight:700;margin-top:12px;display:inline-block}
+/* ── PAIN SECTION ── */
+#pain{background:var(--off)}
+.pain-intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.pain-counter-wrap{position:sticky;top:80px}
+.counter-card{background:white;border:1px solid var(--b);border-radius:18px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,.05)}
+.counter-label{font-size:.8125rem;color:var(--t3);line-height:1.6;margin-bottom:16px}
+#lossCounter{font-size:3.5rem;font-weight:900;color:var(--t1);letter-spacing:-.04em;font-variant-numeric:tabular-nums;line-height:1}
+.counter-sub{font-size:.8125rem;color:var(--t4);margin-top:10px;line-height:1.55}
+.pain-cards{display:flex;flex-direction:column;gap:20px}
+.pain-card{background:white;border:1px solid var(--b);border-radius:16px;padding:28px;
+border-left:3px solid var(--gold);transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1)}
+.pain-card:hover{transform:translateX(4px);box-shadow:0 6px 28px rgba(0,0,0,.07)}
+.pain-card-title{font-size:1rem;font-weight:700;color:var(--t1);margin-bottom:10px}
+.pain-card-body{font-size:.9375rem;color:var(--t3);line-height:1.72}
 
-/* Content calendar */
-.cal-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;font-size:0.75rem}
-.cal-day{font-weight:700;color:var(--text-3);text-align:center;padding-bottom:6px;border-bottom:1px solid var(--border)}
-.cal-cell{background:var(--light);border-radius:8px;padding:6px;text-align:center;font-weight:600;font-size:0.65rem;color:var(--text-2)}
-.cal-cell.gold{background:rgba(245,192,0,0.15);color:#92700a}
+/* ── SYSTEMS SECTION ── */
+#systems{background:white}
+.systems-intro{text-align:center;max-width:680px;margin:0 auto 80px}
+.systems-intro .section-sub{margin:16px auto 0}
+.systems-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--b);border-radius:20px;overflow:hidden}
+.sys-item{padding:28px 20px;border-right:1px solid var(--b);cursor:pointer;transition:background .2s;position:relative}
+.sys-item:last-child{border-right:none}
+.sys-item:hover,.sys-item.active{background:var(--gold8)}
+.sys-item.active::after{content:'';position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);
+width:40px;height:3px;background:var(--gold);border-radius:2px 2px 0 0}
+.sys-num{font-size:.68rem;font-weight:700;letter-spacing:.1em;color:var(--t4);margin-bottom:10px}
+.sys-icon{font-size:1.5rem;margin-bottom:10px}
+.sys-name{font-size:.875rem;font-weight:700;color:var(--t1);line-height:1.3}
+.sys-detail{margin-top:0;max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.16,1,.3,1),margin .3s}
+.sys-detail.open{max-height:800px;margin-top:56px}
+.sys-detail-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:0 8px 8px}
+.sys-detail-text .sys-h3{font-size:1.5rem;font-weight:800;letter-spacing:-.03em;margin-bottom:16px}
+.sys-detail-text p{font-size:.9375rem;color:var(--t3);line-height:1.75;margin-bottom:20px}
+.sys-detail-text ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.sys-detail-text li{font-size:.875rem;color:var(--t2);display:flex;align-items:flex-start;gap:10px}
+.sys-detail-text li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px}
+.sys-demo{background:var(--off);border:1px solid var(--b);border-radius:16px;overflow:hidden}
 
-/* Dashboard */
-.dash-bars{display:flex;align-items:flex-end;gap:8px;height:120px;margin:16px 0}
-.dash-bar{flex:1;border-radius:6px 6px 0 0;transition:height 0.6s cubic-bezier(0.16,1,0.3,1)}
-.dash-metrics{display:flex;gap:32px;margin-top:12px}
-.dash-metric-num{font-size:1.5rem;font-weight:900;color:var(--text-1)}
-.dash-metric-label{font-size:0.75rem;color:var(--text-3)}
+/* demo: phone log */
+.demo-log{padding:20px;font-family:'SF Mono','Fira Code',monospace;font-size:.8125rem}
+.demo-log-line{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--b)}
+.demo-log-line:last-child{border-bottom:none}
+.demo-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.demo-dot.blue{background:#3b82f6}.demo-dot.yellow{background:var(--gold)}.demo-dot.green{background:#22c55e}
+
+/* demo: chat */
+.demo-chat{padding:20px;display:flex;flex-direction:column;gap:10px}
+.dc-recv,.dc-sent{max-width:78%;padding:9px 13px;font-size:.875rem;border-radius:12px;line-height:1.45}
+.dc-recv{background:var(--light);color:var(--t2);border-radius:12px 12px 12px 3px;align-self:flex-start}
+.dc-sent{background:var(--t1);color:white;border-radius:12px 12px 3px 12px;align-self:flex-end}
+.demo-badge{margin:8px 0 0;display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--t1);border-radius:8px;padding:7px 12px;font-size:.75rem;font-weight:700}
+
+/* demo: content calendar */
+.demo-cal{padding:20px}
+.demo-cal-header{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:8px}
+.demo-cal-day{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--t4);text-align:center}
+.demo-cal-row{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.demo-cal-cell{border-radius:6px;padding:7px 6px;font-size:.7rem;font-weight:600;text-align:center;line-height:1.3}
+.cal-post{background:#eff6ff;color:#1d4ed8}
+.cal-video{background:#f0fdf4;color:#15803d}
+.cal-email{background:#fefce8;color:#854d0e}
+.cal-empty{background:var(--off);color:var(--t4)}
+
+/* demo: dashboard */
+.demo-dash{padding:20px}
+.demo-dash-title{font-size:.78rem;font-weight:700;color:var(--t1);margin-bottom:14px}
+.dash-bars{display:flex;align-items:flex-end;gap:8px;height:80px}
+.dash-bar{flex:1;border-radius:4px 4px 0 0;transition:height .8s cubic-bezier(.16,1,.3,1)}
+.dash-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.dash-metric{background:var(--off);border-radius:8px;padding:10px 12px}
+.dash-metric-num{font-size:1.25rem;font-weight:900;letter-spacing:-.03em}
+.dash-metric-label{font-size:.72rem;color:var(--t3);margin-top:2px}
 
 /* ── TRANSFORMATION ── */
-#transformation{background:var(--near-white)}
-.compare-table{max-width:760px;margin:40px auto 0;background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--border)}
-.compare-table table{width:100%;border-collapse:collapse}
-.compare-table th,.compare-table td{padding:16px 20px;text-align:left;font-size:0.9375rem}
-.compare-table thead th{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3)}
-.compare-table thead th:last-child{background:#F5C000;color:#0a0a0a;font-weight:700}
-.compare-table tbody tr:nth-child(even){background:var(--near-white)}
-.compare-table tbody td:first-child{color:var(--text-2);font-weight:500}
-.compare-table tbody td:nth-child(2){color:var(--text-3)}
-.compare-table tbody td:last-child{font-weight:700;color:var(--text-1)}
-.chips{margin-top:40px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.chip{border:1px solid var(--border);border-radius:100px;padding:8px 18px;font-size:0.875rem;font-weight:500;background:#fff;color:var(--text-2)}
-.roi-card{margin-top:48px;max-width:760px;margin-left:auto;margin-right:auto;background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px 36px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
-.roi-row1{font-weight:600;color:var(--text-1);margin-bottom:6px}
-.roi-row2{font-size:0.875rem;color:var(--text-3)}
-.roi-track{height:8px;background:var(--light);border-radius:100px;margin-top:20px;overflow:hidden}
-#roiBar{background:#F5C000;height:100%;width:0;border-radius:100px;transition:width 1.4s cubic-bezier(0.16,1,0.3,1)}
-
-/* ── PHASES ── */
-.phases-grid{max-width:920px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.phase-card{padding:40px;position:relative;border-top:3px solid #F5C000}
-.phase-badge{position:absolute;top:-14px;left:32px;background:#F5C000;color:#0a0a0a;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;padding:4px 14px;border-radius:100px;text-transform:uppercase}
-.phase-card h3{margin-top:16px;font-size:1.25rem;font-weight:700}
-.phase-card p{font-size:0.9375rem;color:var(--text-3);line-height:1.7;margin-top:12px}
+#transform{background:var(--t1);color:white;padding:128px 0}
+#transform .section-label{color:var(--gold)}
+#transform .section-h2{color:white}
+.transform-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:64px;align-items:start}
+.compare-table{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;overflow:hidden}
+.compare-head{display:grid;grid-template-columns:2fr 1fr 1fr;background:rgba(255,255,255,.06)}
+.compare-head div{padding:14px 20px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.compare-head .after-head{background:rgba(245,192,0,.15);color:var(--gold)}
+.compare-row{display:grid;grid-template-columns:2fr 1fr 1fr;border-top:1px solid rgba(255,255,255,.08)}
+.compare-row div{padding:16px 20px;font-size:.9375rem}
+.compare-row .c-label{color:rgba(255,255,255,.6);font-weight:500}
+.compare-row .c-before{color:rgba(255,255,255,.35);font-weight:600}
+.compare-row .c-after{color:white;font-weight:800;background:rgba(245,192,0,.07)}
+.transform-right{display:flex;flex-direction:column;gap:28px}
+.roi-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px}
+.roi-title{font-size:1.0625rem;font-weight:700;color:white;margin-bottom:6px}
+.roi-sub{font-size:.875rem;color:rgba(255,255,255,.45);margin-bottom:20px}
+.roi-track{height:8px;background:rgba(255,255,255,.1);border-radius:100px;overflow:hidden}
+.roi-fill{height:100%;width:0;background:var(--gold);border-radius:100px;transition:width 1.6s cubic-bezier(.16,1,.3,1)}
+.chips-wrap{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chip{border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:8px 18px;font-size:.8125rem;
+color:rgba(255,255,255,.65);font-weight:500}
 
 /* ── TESTIMONIALS ── */
-#testimonials{background:var(--near-white)}
-.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.test-card{padding:36px;border-top:3px solid #F5C000}
-.test-badge{background:#fef3c7;color:#92700a;border-radius:100px;padding:5px 14px;font-size:0.75rem;font-weight:700;display:inline-block;margin-bottom:20px}
-.test-quote{font-size:0.9375rem;color:var(--text-2);line-height:1.75;font-style:italic;margin-bottom:24px}
-.test-role{font-size:0.875rem;font-weight:600;color:var(--text-1)}
-.test-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.test-chip{background:var(--light);color:var(--text-3);border-radius:100px;padding:4px 12px;font-size:0.75rem}
+#testimonials{background:var(--off)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.testi-card{background:white;border:1px solid var(--b);border-radius:16px;padding:32px;
+border-top:3px solid var(--gold);
+transition:transform .28s cubic-bezier(.4,0,.2,1),box-shadow .28s cubic-bezier(.4,0,.2,1)}
+.testi-card:hover{transform:translateY(-5px);box-shadow:0 8px 32px rgba(0,0,0,.08)}
+.testi-badge{display:inline-block;background:#fef3c7;color:#92700a;border-radius:100px;
+padding:5px 14px;font-size:.75rem;font-weight:700;margin-bottom:20px}
+.testi-quote{font-size:.9375rem;color:var(--t2);line-height:1.76;font-style:italic;margin-bottom:24px}
+.testi-role{font-size:.875rem;font-weight:700;color:var(--t1)}
+.testi-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.testi-chip{background:var(--off);color:var(--t3);border-radius:100px;padding:4px 12px;font-size:.72rem;font-weight:500}
 
 /* ── PROCESS ── */
-.process-steps{display:flex;margin-top:64px}
-.step{flex:1;padding:0 32px}
-.step:not(:first-child){border-left:2px dashed rgba(245,192,0,0.4)}
-.step-num{font-size:3.5rem;font-weight:900;color:#F5C000;opacity:0.25;line-height:1;margin-bottom:16px}
-.step h3{font-size:1.25rem;font-weight:700;color:var(--text-1)}
-.step p{font-size:0.9375rem;color:var(--text-3);line-height:1.75;margin-top:12px}
-.step-guarantee{margin-top:20px;border-left:3px solid #F5C000;padding-left:14px;font-size:0.875rem;color:var(--text-2);font-weight:500}
+#process{background:white}
+.process-header{text-align:center;max-width:640px;margin:0 auto 80px}
+.process-header .section-sub{margin:16px auto 0}
+.process-timeline{position:relative;max-width:840px;margin:0 auto}
+.process-timeline::before{content:'';position:absolute;left:32px;top:0;bottom:0;width:2px;
+background:linear-gradient(to bottom,var(--gold),rgba(245,192,0,.1));border-radius:2px}
+.process-step{display:grid;grid-template-columns:64px 1fr;gap:32px;margin-bottom:56px;position:relative}
+.process-step:last-child{margin-bottom:0}
+.step-num-wrap{display:flex;flex-direction:column;align-items:center;z-index:1}
+.step-num{width:64px;height:64px;border-radius:50%;background:white;border:2px solid var(--gold);
+display:flex;align-items:center;justify-content:center;font-size:1.125rem;font-weight:900;color:var(--gold);flex-shrink:0}
+.step-body{padding-top:10px}
+.step-tag{display:inline-block;background:var(--gold8);color:#9a7500;border:1px solid var(--gold20);
+border-radius:6px;padding:3px 10px;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.step-title{font-size:1.375rem;font-weight:800;letter-spacing:-.03em;color:var(--t1);margin-bottom:10px}
+.step-body p{font-size:.9375rem;color:var(--t3);line-height:1.75;margin-bottom:16px}
+.step-guarantee{border-left:3px solid var(--gold);padding-left:16px;font-size:.875rem;color:var(--t2);font-weight:500;font-style:italic}
+
+/* ── INDUSTRIES ── */
+#industries{background:var(--off);padding:0}
+.industries-header{padding:96px 0 64px;text-align:center}
+.industries-header .section-sub{margin:16px auto 0}
+.ind-scroll-wrap{overflow-x:auto;padding-bottom:32px;-webkit-overflow-scrolling:touch}
+.ind-scroll-wrap::-webkit-scrollbar{height:3px}
+.ind-scroll-wrap::-webkit-scrollbar-track{background:transparent}
+.ind-scroll-wrap::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+.ind-track{display:flex;gap:20px;padding:0 28px 0;min-width:max-content;padding-bottom:64px}
+.ind-card{width:320px;flex-shrink:0;background:white;border:1px solid var(--b);border-radius:20px;padding:32px;
+border-top:3px solid transparent;transition:all .28s cubic-bezier(.4,0,.2,1)}
+.ind-card:hover{border-top-color:var(--gold);transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,.08)}
+.ind-icon{font-size:2rem;margin-bottom:16px}
+.ind-name{font-size:1.125rem;font-weight:800;letter-spacing:-.03em;margin-bottom:10px}
+.ind-body{font-size:.875rem;color:var(--t3);line-height:1.7;margin-bottom:20px}
+.ind-results{display:flex;flex-direction:column;gap:7px}
+.ind-result{display:flex;align-items:center;gap:8px;font-size:.8125rem;font-weight:600;color:var(--t2)}
+.ind-result::before{content:'→';color:var(--gold);font-weight:700}
 
 /* ── FINAL CTA ── */
-#cta{background:#F5C000;padding:120px 0;text-align:center}
-.cta-pill{display:inline-block;background:#fff;color:#0a0a0a;border-radius:100px;padding:8px 22px;font-size:0.8rem;font-weight:700;margin-bottom:36px}
-#cta h2{color:#0a0a0a;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;letter-spacing:-0.04em}
-.cta-guarantee{background:#fff;border-radius:16px;padding:32px 40px;max-width:580px;margin:40px auto;box-shadow:0 4px 24px rgba(0,0,0,0.1);font-size:1rem;color:var(--text-2);line-height:1.75;text-align:left}
-#cta .btn-black{padding:17px 38px;border-radius:12px;font-size:1.0625rem;margin-top:32px}
-#cta .btn-black:hover{box-shadow:0 8px 32px rgba(0,0,0,0.25)}
-.cta-micro{margin-top:20px;font-size:0.875rem;color:rgba(0,0,0,0.5)}
+#cta{background:var(--gold);padding:112px 0;text-align:center}
+.cta-inner{max-width:700px;margin:0 auto}
+.cta-pill{display:inline-block;background:rgba(0,0,0,.1);color:rgba(0,0,0,.7);border-radius:100px;
+padding:7px 20px;font-size:.78rem;font-weight:700;letter-spacing:.06em;margin-bottom:32px}
+#cta .section-h2{color:var(--t1);font-size:clamp(2.5rem,5vw,4.25rem)}
+.cta-guarantee{background:white;border-radius:16px;padding:28px 36px;max-width:580px;margin:36px auto 0;
+box-shadow:0 4px 24px rgba(0,0,0,.1);font-size:.9375rem;color:var(--t2);line-height:1.75}
+.cta-btn-wrap{display:flex;justify-content:center;gap:14px;margin-top:36px;flex-wrap:wrap}
+.btn-black{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;border-radius:10px;
+background:var(--t1);color:white;font-size:1rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;
+transition:all .22s cubic-bezier(.4,0,.2,1)}
+.btn-black:hover{background:#18181b;box-shadow:0 6px 28px rgba(0,0,0,.3);transform:translateY(-2px)}
+.cta-micro{margin-top:20px;font-size:.875rem;color:rgba(0,0,0,.45)}
 
 /* ── FOOTER ── */
-footer{background:#0a0a0a;padding:56px 0;color:#fff}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
-.footer-logo span:first-child{font-size:1.2rem;font-weight:900;color:#fff}
-.footer-logo span:last-child{font-size:0.6rem;font-weight:700;letter-spacing:0.1em;color:#F5C000;margin-left:8px}
-.footer-copy{font-size:0.8125rem;color:rgba(255,255,255,0.4)}
-.footer-email{color:rgba(255,255,255,0.5);font-size:0.875rem;transition:color 0.2s}
-.footer-email:hover{color:#fff}
+footer{background:#09090b;padding:52px 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.footer-logo{display:flex;align-items:baseline;gap:8px}
+.footer-logo-x{font-size:1.2rem;font-weight:900;letter-spacing:-.04em;color:white}
+.footer-logo-s{font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.footer-copy{font-size:.8rem;color:rgba(255,255,255,.28)}
+.footer-email{font-size:.875rem;color:rgba(255,255,255,.4);transition:color .15s}
+.footer-email:hover{color:white}
 
 /* ── MOBILE ── */
-@media(max-width:768px){
-.nav-links{display:none!important}
-#ham{display:flex}
-#hero h1{font-size:clamp(3rem,13vw,5rem)}
-.hero-stats{grid-template-columns:1fr;text-align:left}
-.stat:not(:last-child){border-right:none;border-bottom:1px solid var(--border);padding-bottom:24px;margin-bottom:24px}
-.feature-row{grid-template-columns:1fr}
-.feature-row.reverse .feature-text{order:-1}
-.pain-grid{grid-template-columns:1fr}
-.compare-table th,.compare-table td{font-size:0.875rem;padding:12px 14px}
-.phases-grid{grid-template-columns:1fr}
-.test-grid{grid-template-columns:1fr}
-.process-steps{flex-direction:column}
-.step:not(:first-child){border-left:none;border-top:2px dashed rgba(245,192,0,0.4);padding-top:32px;margin-top:32px}
-.footer-inner{flex-direction:column;text-align:center}
-.cta-guarantee{padding:24px}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;min-height:auto}
+  .hero-right{display:none}
+  .hero-left{padding-bottom:48px}
+  .pain-intro{grid-template-columns:1fr}
+  .pain-counter-wrap{position:static}
+  .systems-grid{grid-template-columns:repeat(2,1fr)}
+  .sys-detail-inner{grid-template-columns:1fr}
+  .transform-grid{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .process-timeline::before{left:24px}
+  .process-step{grid-template-columns:48px 1fr;gap:20px}
+  .step-num{width:48px;height:48px;font-size:1rem}
+  .stats-grid{grid-template-columns:1fr}
+  .stat-item{border-left:none;border-bottom:1px solid var(--b);padding:16px 0}
+  .stat-item:last-child{border-bottom:none}
+  .nav-links,.nav-r>.nav-cta,.lang-wrap{display:none}
+  .ham{display:flex}
+  .footer-inner{flex-direction:column;text-align:center}
+  .compare-head,.compare-row{grid-template-columns:1fr 1fr 1fr}
+  .compare-head div,.compare-row div{padding:10px 12px;font-size:.8125rem}
+  .ind-card{width:280px}
+  #cta .section-h2{font-size:2.25rem}
+}
+@media(max-width:600px){
+  .hero-h1{font-size:clamp(3rem,13vw,4.5rem)}
+  .section{padding:88px 0}
+  .hero-stats{padding:28px 0}
+  .systems-grid{grid-template-columns:1fr}
+  .sys-item{border-right:none;border-bottom:1px solid var(--b)}
+  .sys-item:last-child{border-bottom:none}
 }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav id="navbar">
-<div class="container nav-inner">
-  <div class="nav-logo"><span>XGN</span><span>— X GROWTH NETWORK</span></div>
-  <div class="nav-links">
-    <a href="#features" data-en="What We Do" data-es="Qué Hacemos">What We Do</a>
-    <a href="#testimonials" data-en="Results" data-es="Resultados">Results</a>
-    <a href="#process" data-en="Process" data-es="Proceso">Process</a>
-    <a href="#cta" data-en="Get Started" data-es="Comenzar">Get Started</a>
+<nav id="nav">
+  <div class="container nav-i">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-x">XGN</span>
+      <span class="nav-logo-s" data-en="— X GROWTH NETWORK" data-es="— X GROWTH NETWORK">— X GROWTH NETWORK</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#systems" data-en="What We Do" data-es="Qué Hacemos">What We Do</a></li>
+      <li><a href="#transform" data-en="Results" data-es="Resultados">Results</a></li>
+      <li><a href="#process" data-en="Process" data-es="Proceso">Process</a></li>
+      <li><a href="#industries" data-en="Industries" data-es="Industrias">Industries</a></li>
+    </ul>
+    <div class="nav-r">
+      <div class="lang-wrap">
+        <button class="lang-btn on" id="btnEN" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btnES" onclick="setLang('es')">ES</button>
+      </div>
+      <a href="mailto:info@xgncorp.com" class="nav-cta" data-en="Get Your Audit →" data-es="Obtén Tu Auditoría →">Get Your Audit →</a>
+    </div>
+    <button class="ham" id="ham" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <div class="nav-right">
-    <button id="btnEN" class="lang-btn active" onclick="setLang('en')">EN</button>
-    <span class="lang-sep">|</span>
-    <button id="btnES" class="lang-btn" onclick="setLang('es')">ES</button>
-    <a href="mailto:info@xgncorp.com" class="nav-cta" data-en="Get Your Audit →" data-es="Obtén Tu Auditoría →">Get Your Audit →</a>
-  </div>
-  <button id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
-</div>
-<div id="mobile-menu">
-  <a href="#features" data-en="What We Do" data-es="Qué Hacemos">What We Do</a>
-  <a href="#testimonials" data-en="Results" data-es="Resultados">Results</a>
-  <a href="#process" data-en="Process" data-es="Proceso">Process</a>
-  <a href="#cta" data-en="Get Started" data-es="Comenzar">Get Started</a>
-  <a href="mailto:info@xgncorp.com" data-en="Get Your Audit →" data-es="Obtén Tu Auditoría →">Get Your Audit →</a>
-</div>
 </nav>
+<div id="mob-menu">
+  <a href="#systems" data-en="What We Do" data-es="Qué Hacemos">What We Do</a>
+  <a href="#transform" data-en="Results" data-es="Resultados">Results</a>
+  <a href="#process" data-en="Process" data-es="Proceso">Process</a>
+  <a href="#industries" data-en="Industries" data-es="Industrias">Industries</a>
+  <div class="lang-wrap" style="align-self:flex-start">
+    <button class="lang-btn on" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+  </div>
+  <a href="mailto:info@xgncorp.com" class="mob-cta" data-en="Get Your Free Audit →" data-es="Obtén Tu Auditoría →">Get Your Free Audit →</a>
+</div>
 
 <!-- TICKER -->
-<div class="ticker">
-<div class="ticker-inner" id="tickerInner">
-  <span class="ticker-item" data-en="⚡ Client signed — no sales call needed" data-es="⚡ Cliente firmado — sin llamada de ventas">⚡ Client signed — no sales call needed</span><span class="ticker-sep">●</span>
-  <span class="ticker-item" data-en="📈 +$23K monthly revenue added in 45 days" data-es="📈 +$23K en ingresos mensuales en 45 días">📈 +$23K monthly revenue added in 45 days</span><span class="ticker-sep">●</span>
-  <span class="ticker-item" data-en="🤖 AI intake live — 0 missed leads this week" data-es="🤖 IA de intake activa — 0 leads perdidos esta semana">🤖 AI intake live — 0 missed leads this week</span><span class="ticker-sep">●</span>
-  <span class="ticker-item" data-en="⏱ 34% ops overhead cut without headcount changes" data-es="⏱ 34% reducción de gastos operativos sin reducir equipo">⏱ 34% ops overhead cut without headcount changes</span><span class="ticker-sep">●</span>
-  <span class="ticker-item" data-en="🚀 4.5x close rate — same leads, smarter follow-up" data-es="🚀 4.5x tasa de cierre — mismos leads, seguimiento inteligente">🚀 4.5x close rate — same leads, smarter follow-up</span><span class="ticker-sep">●</span>
-  <span class="ticker-item" data-en="💡 $18K avg monthly revenue increase per client" data-es="💡 $18K promedio de aumento mensual por cliente">💡 $18K avg monthly revenue increase per client</span><span class="ticker-sep">●</span>
-  <span class="ticker-item" data-en="⚡ 5 clients/month max — 2 spots open" data-es="⚡ 5 clientes/mes máx — 2 lugares disponibles">⚡ 5 clients/month max — 2 spots open</span><span class="ticker-sep">●</span>
-  <!-- duplicate for seamless loop -->
-  <span class="ticker-item" data-en="⚡ Client signed — no sales call needed" data-es="⚡ Cliente firmado — sin llamada de ventas">⚡ Client signed — no sales call needed</span><span class="ticker-sep">●</span>
-  <span class="ticker-item" data-en="📈 +$23K monthly revenue added in 45 days" data-es="📈 +$23K en ingresos mensuales en 45 días">📈 +$23K monthly revenue added in 45 days</span><span class="ticker-sep">●</span>
-  <span class="ticker-item" data-en="🤖 AI intake live — 0 missed leads this week" data-es="🤖 IA de intake activa — 0 leads perdidos esta semana">🤖 AI intake live — 0 missed leads this week</span><span class="ticker-sep">●</span>
-  <span class="ticker-item" data-en="⏱ 34% ops overhead cut without headcount changes" data-es="⏱ 34% reducción de gastos operativos sin reducir equipo">⏱ 34% ops overhead cut without headcount changes</span><span class="ticker-sep">●</span>
-  <span class="ticker-item" data-en="🚀 4.5x close rate — same leads, smarter follow-up" data-es="🚀 4.5x tasa de cierre — mismos leads, seguimiento inteligente">🚀 4.5x close rate — same leads, smarter follow-up</span><span class="ticker-sep">●</span>
-  <span class="ticker-item" data-en="💡 $18K avg monthly revenue increase per client" data-es="💡 $18K promedio de aumento mensual por cliente">💡 $18K avg monthly revenue increase per client</span><span class="ticker-sep">●</span>
-  <span class="ticker-item" data-en="⚡ 5 clients/month max — 2 spots open" data-es="⚡ 5 clientes/mes máx — 2 lugares disponibles">⚡ 5 clients/month max — 2 spots open</span><span class="ticker-sep">●</span>
-</div>
+<div style="margin-top:64px">
+  <div class="ticker">
+    <div class="ticker-inner" id="tickerInner">
+      <span class="tick-item"><span class="tick-dot"></span><span data-en="⚡ Client signed — no sales call needed" data-es="⚡ Cliente firmado — sin llamada de ventas">⚡ Client signed — no sales call needed</span></span>
+      <span class="tick-item"><span class="tick-dot"></span><span data-en="📈 +$23K monthly revenue added in 45 days" data-es="📈 +$23K en ingresos mensuales en 45 días">📈 +$23K monthly revenue added in 45 days</span></span>
+      <span class="tick-item"><span class="tick-dot"></span><span data-en="🤖 AI intake live — 0 missed leads this week" data-es="🤖 IA de intake activa — 0 leads perdidos esta semana">🤖 AI intake live — 0 missed leads this week</span></span>
+      <span class="tick-item"><span class="tick-dot"></span><span data-en="⏱ 34% ops overhead cut without headcount changes" data-es="⏱ 34% reducción de gastos sin reducir equipo">⏱ 34% ops overhead cut without headcount changes</span></span>
+      <span class="tick-item"><span class="tick-dot"></span><span data-en="🚀 4.5x close rate — same leads, smarter follow-up" data-es="🚀 4.5x tasa de cierre — mismos leads, seguimiento inteligente">🚀 4.5x close rate — same leads, smarter follow-up</span></span>
+      <span class="tick-item"><span class="tick-dot"></span><span data-en="💡 $18K avg monthly revenue increase per client" data-es="💡 $18K promedio de aumento mensual por cliente">💡 $18K avg monthly revenue increase per client</span></span>
+      <span class="tick-item"><span class="tick-dot"></span><span data-en="⚡ 5 clients/month max — 2 spots open" data-es="⚡ 5 clientes/mes máx — 2 lugares disponibles">⚡ 5 clients/month max — 2 spots open</span></span>
+      <!-- duplicate for loop -->
+      <span class="tick-item"><span class="tick-dot"></span><span data-en="⚡ Client signed — no sales call needed" data-es="⚡ Cliente firmado — sin llamada de ventas">⚡ Client signed — no sales call needed</span></span>
+      <span class="tick-item"><span class="tick-dot"></span><span data-en="📈 +$23K monthly revenue added in 45 days" data-es="📈 +$23K en ingresos mensuales en 45 días">📈 +$23K monthly revenue added in 45 days</span></span>
+      <span class="tick-item"><span class="tick-dot"></span><span data-en="🤖 AI intake live — 0 missed leads this week" data-es="🤖 IA de intake activa — 0 leads perdidos esta semana">🤖 AI intake live — 0 missed leads this week</span></span>
+      <span class="tick-item"><span class="tick-dot"></span><span data-en="⏱ 34% ops overhead cut without headcount changes" data-es="⏱ 34% reducción de gastos sin reducir equipo">⏱ 34% ops overhead cut without headcount changes</span></span>
+      <span class="tick-item"><span class="tick-dot"></span><span data-en="🚀 4.5x close rate — same leads, smarter follow-up" data-es="🚀 4.5x tasa de cierre — mismos leads, seguimiento inteligente">🚀 4.5x close rate — same leads, smarter follow-up</span></span>
+      <span class="tick-item"><span class="tick-dot"></span><span data-en="💡 $18K avg monthly revenue increase per client" data-es="💡 $18K promedio de aumento mensual por cliente">💡 $18K avg monthly revenue increase per client</span></span>
+      <span class="tick-item"><span class="tick-dot"></span><span data-en="⚡ 5 clients/month max — 2 spots open" data-es="⚡ 5 clientes/mes máx — 2 lugares disponibles">⚡ 5 clients/month max — 2 spots open</span></span>
+    </div>
+  </div>
 </div>
 
 <!-- HERO -->
 <section id="hero">
-<div class="container">
-  <div class="reveal d1">
-    <span style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(245,192,0,0.35);background:rgba(245,192,0,0.07);color:#92700a;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;padding:7px 18px;border-radius:100px;text-transform:uppercase" data-en="AI Integration for Ambitious Businesses" data-es="Integración de IA para Negocios Ambiciosos">AI Integration for Ambitious Businesses</span>
-  </div>
-  <h1>
-    <span class="hl" id="l1" data-en="YOUR" data-es="TU">YOUR</span>
-    <span class="hl" id="l2" data-en="BUSINESS." data-es="NEGOCIO.">BUSINESS.</span>
-    <span class="hl" id="l3" data-en="ENGINEERED" data-es="DISEÑADO">ENGINEERED</span>
-    <span class="hl gold" id="l4" data-en="FOR GROWTH." data-es="PARA CRECER.">FOR GROWTH.</span>
-  </h1>
-  <p class="hero-sub reveal d2" data-en="We integrate AI into your existing workflows so you spend less, earn more, and scale without hiring. No rip-and-replace. No complexity. Just leverage." data-es="Integramos IA en tus flujos de trabajo existentes para que gastes menos, ganes más y escales sin contratar. Sin reemplazos. Sin complejidad. Solo apalancamiento.">We integrate AI into your existing workflows so you spend less, earn more, and scale without hiring. No rip-and-replace. No complexity. Just leverage.</p>
-  <div class="hero-cta reveal d3">
-    <a href="mailto:info@xgncorp.com" class="btn-gold magnetic" data-en="⚡ Get Your Free Growth Audit" data-es="⚡ Obtén Tu Auditoría de Crecimiento Gratis">⚡ Get Your Free Growth Audit</a>
-    <a href="#features" class="btn-ghost" data-en="See how it works →" data-es="Ver cómo funciona →">See how it works →</a>
-  </div>
-  <div class="hero-trust reveal d4">
-    <p data-en="One 15-min conversation. We show you exactly where AI multiplies your business." data-es="Una conversación de 15 min. Te mostramos exactamente dónde la IA multiplica tu negocio.">One 15-min conversation. We show you exactly where AI multiplies your business.</p>
-    <span class="pill-sm" data-en="We take 5 clients/month. 2 spots open." data-es="Tomamos 5 clientes/mes. 2 lugares disponibles.">We take 5 clients/month. 2 spots open.</span>
-  </div>
-  <div class="hero-stats reveal d2">
-    <div class="stat">
-      <div class="stat-num">$20K+</div>
-      <div class="stat-label" data-en="Monthly revenue increase per client" data-es="Aumento de ingresos mensuales por cliente">Monthly revenue increase per client</div>
+  <div class="container">
+    <div class="hero-grid">
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="rv d1">
+          <div class="hero-pill">
+            <span></span>
+            <span data-en="AI Integration for Ambitious Businesses" data-es="Integración de IA para Negocios Ambiciosos">AI Integration for Ambitious Businesses</span>
+          </div>
+        </div>
+        <h1 class="hero-h1">
+          <span class="hl" id="l1" data-en="YOUR" data-es="TU">YOUR</span>
+          <span class="hl" id="l2" data-en="BUSINESS." data-es="NEGOCIO.">BUSINESS.</span>
+          <span class="hl" id="l3" data-en="ENGINEERED" data-es="DISEÑADO">ENGINEERED</span>
+          <span class="hl" id="l4" data-en="FOR GROWTH." data-es="PARA CRECER.">FOR GROWTH.</span>
+        </h1>
+        <p class="hero-sub rv d2"
+           data-en="We integrate AI into your existing workflows so you spend less, earn more, and scale without hiring. No rip-and-replace. No complexity. Just leverage."
+           data-es="Integramos IA en tus flujos de trabajo existentes para que gastes menos, ganes más y escales sin contratar. Sin reemplazos. Sin complejidad. Solo apalancamiento.">
+          We integrate AI into your existing workflows so you spend less, earn more, and scale without hiring. No rip-and-replace. No complexity. Just leverage.
+        </p>
+        <div class="hero-ctas rv d3">
+          <a href="mailto:info@xgncorp.com" class="btn-gold magnetic"
+             data-en="⚡ Get Your Free Growth Audit" data-es="⚡ Obtén Tu Auditoría Gratis">⚡ Get Your Free Growth Audit</a>
+          <a href="#systems" class="btn-outline"
+             data-en="See how it works →" data-es="Ver cómo funciona →">See how it works →</a>
+        </div>
+        <div class="hero-trust rv d4">
+          <span data-en="One 15-min call. We show you exactly where AI multiplies your business." data-es="Una llamada de 15 min. Te mostramos exactamente dónde la IA multiplica tu negocio.">One 15-min call. We show you exactly where AI multiplies your business.</span>
+          <span class="hero-trust-pill" data-en="2 spots left" data-es="2 lugares disponibles">2 spots left</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: Live AI Activity Panel -->
+      <div class="hero-right rv d2">
+        <div class="hero-panel">
+          <div class="panel-header">
+            <div class="panel-dots">
+              <div class="panel-dot" style="background:#ff5f57"></div>
+              <div class="panel-dot" style="background:#ffbd2e"></div>
+              <div class="panel-dot" style="background:#28c840"></div>
+            </div>
+            <span class="panel-title" data-en="XGN AI System — Live Activity" data-es="Sistema IA de XGN — Actividad en Vivo">XGN AI System — Live Activity</span>
+          </div>
+          <div class="panel-body">
+            <div class="panel-log">
+              <div class="log-line" id="ll1">
+                <div class="log-icon blue">📲</div>
+                <div class="log-text">
+                  <div class="log-label" data-en="INCOMING" data-es="ENTRANTE">INCOMING</div>
+                  <div class="log-val" data-en="New lead — (305) 555-2847" data-es="Nuevo lead — (305) 555-2847">New lead — (305) 555-2847</div>
+                </div>
+              </div>
+              <div class="panel-divider"></div>
+              <div class="log-line" id="ll2">
+                <div class="log-icon gold">🤖</div>
+                <div class="log-text">
+                  <div class="log-label" data-en="AI RESPONSE" data-es="RESPUESTA IA">AI RESPONSE</div>
+                  <div class="log-val" data-en="Qualifying lead... done in 1.2s" data-es="Calificando lead... listo en 1.2s">Qualifying lead... done in 1.2s</div>
+                </div>
+              </div>
+              <div class="panel-divider"></div>
+              <div class="log-line" id="ll3">
+                <div class="log-icon green">✅</div>
+                <div class="log-text">
+                  <div class="log-label" data-en="BOOKED" data-es="RESERVADO">BOOKED</div>
+                  <div class="log-val" data-en="Appointment: Tue 2PM — CRM synced" data-es="Cita: Mar 2PM — CRM sincronizado">Appointment: Tue 2PM — CRM synced</div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-result">
+              <div class="panel-result-label" data-en="MONTHLY RECOVERED REVENUE" data-es="INGRESOS RECUPERADOS AL MES">MONTHLY RECOVERED REVENUE</div>
+              <div class="panel-result-val">+$23,400</div>
+              <div class="panel-result-sub" data-en="From leads that used to fall through the cracks" data-es="De leads que antes se perdían">From leads that used to fall through the cracks</div>
+            </div>
+            <div class="panel-chat">
+              <div class="dc-recv" data-en="Hey, interested in your service" data-es="Hola, me interesa tu servicio">Hey, interested in your service</div>
+              <div class="dc-sent" data-en="Great! Can you do Tuesday 2PM? 📅" data-es="¡Genial! ¿Puedes el martes 2PM? 📅">Great! Can you do Tuesday 2PM? 📅</div>
+              <div class="dc-recv" data-en="Yes! That works" data-es="¡Sí! Me funciona">Yes! That works</div>
+              <div class="dc-sent" data-en="✅ Booked! Confirmation sent." data-es="✅ ¡Reservado! Confirmación enviada.">✅ Booked! Confirmation sent.</div>
+              <div class="auto-badge">⚡ <span data-en="Auto-reply sent in 0.8s — lead captured" data-es="Respuesta automática en 0.8s — lead capturado">Auto-reply sent in 0.8s — lead captured</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="stat">
-      <div class="stat-num">5–8x</div>
-      <div class="stat-label" data-en="Return on automation systems" data-es="Retorno en sistemas de automatización">Return on automation systems</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">4→5</div>
-      <div class="stat-label" data-en="Figures. Clients scaled from 4-figure to consistent 5-figure months" data-es="Cifras. Clientes de 4 a 5 cifras consistentes">Figures. Clients scaled from 4-figure to consistent 5-figure months</div>
+  </div>
+
+  <!-- STATS STRIP -->
+  <div class="hero-stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item rv d1">
+          <div class="stat-num">$20K+</div>
+          <div class="stat-label" data-en="Monthly revenue increase per client" data-es="Aumento de ingresos mensuales por cliente">Monthly revenue increase per client</div>
+        </div>
+        <div class="stat-item rv d2">
+          <div class="stat-num">5–8×</div>
+          <div class="stat-label" data-en="Return on automation investment" data-es="Retorno en inversión de automatización">Return on automation investment</div>
+        </div>
+        <div class="stat-item rv d3">
+          <div class="stat-num">4→5</div>
+          <div class="stat-label" data-en="Figures. Clients scaled to consistent 5-figure months" data-es="Cifras. Clientes de 4 a 5 cifras consistentes">Figures. Clients scaled to consistent 5-figure months</div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 </section>
 
-<!-- COST SECTION -->
-<section id="cost">
-<div class="container">
-  <div class="label reveal" data-en="THE COST OF WAITING" data-es="EL COSTO DE ESPERAR">THE COST OF WAITING</div>
-  <h2 id="costHeadline" class="reveal" data-en="Right now, your business is leaking leverage everywhere." data-es="Ahora mismo, tu negocio está perdiendo apalancamiento por todas partes." style="max-width:760px">Right now, your business is leaking leverage everywhere.</h2>
-  <div class="loss-card reveal d2">
-    <div class="loss-label" data-en="Revenue your team is generating manually that AI could handle:" data-es="Ingresos que tu equipo genera manualmente que la IA podría manejar:">Revenue your team is generating manually that AI could handle:</div>
-    <div id="lossCounter">$0.00</div>
-    <div class="loss-sub" data-en="At XGN's avg. client growth rate of $18K/mo added, that's $600/day in untapped leverage." data-es="A la tasa promedio de XGN de $18K/mes añadidos, eso es $600/día en apalancamiento sin aprovechar.">At XGN's avg. client growth rate of $18K/mo added, that's $600/day in untapped leverage.</div>
+<!-- PAIN SECTION -->
+<section id="pain" class="section">
+  <div class="container">
+    <div class="rv"><span class="section-label" data-en="THE COST OF WAITING" data-es="EL COSTO DE ESPERAR">THE COST OF WAITING</span></div>
+    <div class="pain-intro">
+      <div>
+        <h2 class="section-h2 rv" id="costHeadline"
+            data-en="Right now, your business is leaking leverage everywhere."
+            data-es="Ahora mismo, tu negocio está perdiendo apalancamiento por todas partes.">
+          Right now, your business is leaking leverage everywhere.
+        </h2>
+        <p class="section-sub rv d1"
+           data-en="Every manual task, every unanswered lead, every process that breaks when you try to grow — that's not a people problem. It's a systems problem. We fix the systems."
+           data-es="Cada tarea manual, cada lead sin respuesta, cada proceso que se rompe cuando intentas crecer — no es un problema de personas. Es un problema de sistemas. Nosotros arreglamos los sistemas.">
+          Every manual task, every unanswered lead, every process that breaks when you try to grow — that's not a people problem. It's a systems problem. We fix the systems.
+        </p>
+        <div class="pain-cards" style="margin-top:40px">
+          <div class="pain-card rv d2">
+            <div class="pain-card-title" data-en="💸 You're Paying People to Do What AI Does for $0" data-es="💸 Pagas Personas Para Hacer Lo Que la IA Hace por $0">💸 You're Paying People to Do What AI Does for $0</div>
+            <div class="pain-card-body" data-en="Scheduling. Follow-up. Intake. Reporting. Every manual task in your business is an ops cost AI can eliminate — without cutting your team. Redirect them to what humans do best." data-es="Agenda. Seguimiento. Intake. Reportes. Cada tarea manual en tu negocio es un costo operativo que la IA puede eliminar — sin recortar tu equipo.">Scheduling. Follow-up. Intake. Reporting. Every manual task in your business is an ops cost AI can eliminate — without cutting your team. Redirect them to what humans do best.</div>
+          </div>
+          <div class="pain-card rv d3">
+            <div class="pain-card-title" data-en="📉 Your Processes Don't Scale. They Break." data-es="📉 Tus Procesos No Escalan. Se Rompen.">📉 Your Processes Don't Scale. They Break.</div>
+            <div class="pain-card-body" data-en="Every time you try to grow, you hit friction — more hires, more overhead, more complexity. The businesses that scale in 2025 aren't bigger teams. They're smarter systems. We build those systems." data-es="Cada vez que intentas crecer, encuentras fricción — más contrataciones, más gastos, más complejidad. Los negocios que escalan tienen sistemas más inteligentes. Nosotros construimos esos sistemas.">Every time you try to grow, you hit friction — more hires, more overhead, more complexity. The businesses that scale in 2025 aren't bigger teams. They're smarter systems. We build those systems.</div>
+          </div>
+          <div class="pain-card rv d4">
+            <div class="pain-card-title" data-en="🚀 Your Competitors Are Already Moving" data-es="🚀 Tus Competidores Ya Se Están Moviendo">🚀 Your Competitors Are Already Moving</div>
+            <div class="pain-card-body" data-en="AI adoption among SMBs doubled in 2024. The businesses integrating now will operate at 2x the efficiency and 3x the margin of those who wait. This isn't a trend. It's the new baseline. The gap compounds daily." data-es="La adopción de IA entre PyMEs se duplicó en 2024. Los negocios que integran ahora operarán al doble de eficiencia y triple de margen. Esto no es una tendencia. Es la nueva base.">AI adoption among SMBs doubled in 2024. The businesses integrating now will operate at 2x the efficiency and 3x the margin of those who wait. This isn't a trend. It's the new baseline. The gap compounds daily.</div>
+          </div>
+        </div>
+      </div>
+      <div class="pain-counter-wrap rv d1">
+        <div class="counter-card">
+          <div class="counter-label" data-en="Revenue your team is generating manually that AI could handle:" data-es="Ingresos que tu equipo genera manualmente que la IA podría manejar:">Revenue your team is generating manually that AI could handle:</div>
+          <div id="lossCounter">$0.00</div>
+          <div class="counter-sub" data-en="At XGN's avg. client growth rate of $18K/mo added, that's $600/day in untapped leverage — ticking up right now." data-es="A la tasa promedio de XGN de $18K/mes añadidos, eso es $600/día en apalancamiento sin aprovechar — acumulándose ahora mismo.">At XGN's avg. client growth rate of $18K/mo added, that's $600/day in untapped leverage — ticking up right now.</div>
+        </div>
+        <div style="margin-top:20px;padding:20px;background:var(--gold8);border:1px solid var(--gold20);border-radius:14px">
+          <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a7500;margin-bottom:10px" data-en="OUR GUARANTEE" data-es="NUESTRA GARANTÍA">OUR GUARANTEE</div>
+          <div style="font-size:.9375rem;color:var(--t1);font-weight:600;line-height:1.55"
+               data-en="If we can't find $10K/mo in untapped leverage in your business — we won't work together."
+               data-es="Si no encontramos $10K/mes en apalancamiento sin aprovechar en tu negocio — no trabajamos juntos.">
+            If we can't find $10K/mo in untapped leverage in your business — we won't work together.
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="pain-grid">
-    <div class="card pain-card reveal d1">
-      <h4 data-en="💸 You're Paying People to Do What AI Does for $0" data-es="💸 Pagas Personas Para Hacer Lo Que la IA Hace por $0">💸 You're Paying People to Do What AI Does for $0</h4>
-      <p data-en="Scheduling. Follow-up. Intake. Reporting. Every manual task in your business is an ops cost AI can eliminate — without cutting your team. Redirect them to what humans do best." data-es="Agenda. Seguimiento. Intake. Reportes. Cada tarea manual en tu negocio es un costo operativo que la IA puede eliminar — sin recortar tu equipo.">Scheduling. Follow-up. Intake. Reporting. Every manual task in your business is an ops cost AI can eliminate — without cutting your team. Redirect them to what humans do best.</p>
-    </div>
-    <div class="card pain-card reveal d2">
-      <h4 data-en="📉 Your Processes Don't Scale. They Break." data-es="📉 Tus Procesos No Escalan. Se Rompen.">📉 Your Processes Don't Scale. They Break.</h4>
-      <p data-en="Every time you try to grow, you hit friction — more hires, more overhead, more complexity. The businesses that scale in 2025 aren't bigger teams. They're smarter systems. We build those systems." data-es="Cada vez que intentas crecer, encuentras fricción — más contrataciones, más gastos generales, más complejidad. Los negocios que escalan en 2025 tienen sistemas más inteligentes.">Every time you try to grow, you hit friction — more hires, more overhead, more complexity. The businesses that scale in 2025 aren't bigger teams. They're smarter systems. We build those systems.</p>
-    </div>
-    <div class="card pain-card reveal d3">
-      <h4 data-en="🚀 Your Competitors Are Already Moving" data-es="🚀 Tus Competidores Ya Se Están Moviendo">🚀 Your Competitors Are Already Moving</h4>
-      <p data-en="AI adoption among SMBs doubled in 2024. The businesses integrating now will operate at 2x the efficiency and 3x the margin of those who wait. This isn't a trend. It's the new baseline. The gap compounds daily." data-es="La adopción de IA entre PyMEs se duplicó en 2024. Los negocios que integran ahora operarán al doble de eficiencia y triple de margen. Esto no es una tendencia. Es la nueva base.">AI adoption among SMBs doubled in 2024. The businesses integrating now will operate at 2x the efficiency and 3x the margin of those who wait. This isn't a trend. It's the new baseline. The gap compounds daily.</p>
-    </div>
-  </div>
-</div>
 </section>
 
-<!-- FEATURES -->
-<section id="features">
-<div class="container">
-  <div class="label reveal" data-en="WHAT WE DO" data-es="QUÉ HACEMOS">WHAT WE DO</div>
-  <h2 class="reveal" data-en="We Don't Consult. We Install Leverage." data-es="No Consultamos. Instalamos Apalancamiento.">We Don't Consult. We Install Leverage.</h2>
-  <p class="sub reveal" style="max-width:560px;color:var(--text-3);margin-bottom:72px" data-en="Five AI systems, fully integrated into your existing workflows. Each one compounds the next." data-es="Cinco sistemas de IA, integrados en tus flujos de trabajo existentes. Cada uno potencia al siguiente.">Five AI systems, fully integrated into your existing workflows. Each one compounds the next.</p>
-
-  <!-- Feature 01 -->
-  <div class="feature-row reveal">
-    <div class="feature-text">
-      <div class="feature-tag" data-en="01 — AI Intake & Booking" data-es="01 — Intake y Reservas con IA">01 — AI Intake & Booking</div>
-      <h3 data-en="Your Front Desk. Runs Itself." data-es="Tu Recepción. Se Administra Sola.">Your Front Desk. Runs Itself.</h3>
-      <p data-en="Every inbound call, inquiry, or DM — handled, qualified, and booked into your calendar in under 2 seconds. No staff needed. No missed opportunities. Your pipeline fills itself while your team focuses on delivering." data-es="Cada llamada entrante, consulta o DM — atendido, calificado y agendado en tu calendario en menos de 2 segundos. Sin personal adicional. Sin oportunidades perdidas.">Every inbound call, inquiry, or DM — handled, qualified, and booked into your calendar in under 2 seconds. No staff needed. No missed opportunities. Your pipeline fills itself while your team focuses on delivering.</p>
-      <ul>
-        <li data-en="24/7 AI-powered intake — zero wait time" data-es="Intake con IA 24/7 — cero tiempo de espera">24/7 AI-powered intake — zero wait time</li>
-        <li data-en="Instant qualification & calendar booking" data-es="Calificación instantánea y reserva en calendario">Instant qualification & calendar booking</li>
-        <li data-en="CRM sync — every lead, zero data entry" data-es="Sincronización con CRM — cada lead, cero entrada manual">CRM sync — every lead, zero data entry</li>
-        <li data-en="Works for tech, construction, hospitality & more" data-es="Funciona para tech, construcción, hospitalidad y más">Works for tech, construction, hospitality & more</li>
-      </ul>
+<!-- SYSTEMS / WHAT WE DO -->
+<section id="systems" class="section">
+  <div class="container">
+    <div class="systems-intro rv">
+      <span class="section-label" data-en="WHAT WE DO" data-es="QUÉ HACEMOS">WHAT WE DO</span>
+      <h2 class="section-h2" data-en="We Don't Consult. We Install Leverage." data-es="No Consultamos. Instalamos Apalancamiento.">We Don't Consult. We Install Leverage.</h2>
+      <p class="section-sub" data-en="Five AI systems, fully integrated into your existing workflows. Each one compounds the next." data-es="Cinco sistemas de IA, integrados en tus flujos de trabajo existentes. Cada uno potencia al siguiente.">Five AI systems, fully integrated into your existing workflows. Each one compounds the next.</p>
     </div>
-    <div class="demo-box">
-      <div class="demo-log">
-        <div class="log-line"><span class="dot dot-blue"></span><span data-en="📲 Incoming call — (305) 555-2847" data-es="📲 Llamada entrante — (305) 555-2847">📲 Incoming call — (305) 555-2847</span></div>
-        <div class="log-line"><span class="dot dot-yellow"></span><span data-en="🤖 AI answered — qualifying lead..." data-es="🤖 IA respondió — calificando lead...">🤖 AI answered — qualifying lead...</span></div>
-        <div class="log-line"><span class="dot dot-green"></span><span data-en="✅ Appointment booked — Tue 2PM" data-es="✅ Cita agendada — Mar 2PM">✅ Appointment booked — Tue 2PM</span></div>
+    <div class="systems-grid rv d1">
+      <div class="sys-item active" onclick="toggleSys(0)">
+        <div class="sys-num">01</div>
+        <div class="sys-icon">📲</div>
+        <div class="sys-name" data-en="AI Intake & Booking" data-es="Intake y Reservas IA">AI Intake & Booking</div>
+      </div>
+      <div class="sys-item" onclick="toggleSys(1)">
+        <div class="sys-num">02</div>
+        <div class="sys-icon">💬</div>
+        <div class="sys-name" data-en="Follow-Up Engine" data-es="Motor de Seguimiento">Follow-Up Engine</div>
+      </div>
+      <div class="sys-item" onclick="toggleSys(2)">
+        <div class="sys-num">03</div>
+        <div class="sys-icon">🎯</div>
+        <div class="sys-name" data-en="Inbound Capture" data-es="Captura Inbound">Inbound Capture</div>
+      </div>
+      <div class="sys-item" onclick="toggleSys(3)">
+        <div class="sys-num">04</div>
+        <div class="sys-icon">✍️</div>
+        <div class="sys-name" data-en="Content Engine" data-es="Motor de Contenido">Content Engine</div>
+      </div>
+      <div class="sys-item" onclick="toggleSys(4)">
+        <div class="sys-num">05</div>
+        <div class="sys-icon">📊</div>
+        <div class="sys-name" data-en="Ops Intelligence" data-es="Inteligencia Operativa">Ops Intelligence</div>
+      </div>
+    </div>
+
+    <!-- SYS 0 -->
+    <div class="sys-detail open" id="sd0">
+      <div class="sys-detail-inner">
+        <div class="sys-detail-text">
+          <div class="step-tag" data-en="01 — AI Intake & Booking" data-es="01 — Intake y Reservas IA">01 — AI Intake & Booking</div>
+          <h3 class="sys-h3" data-en="Your Front Desk. Runs Itself." data-es="Tu Recepción. Se Administra Sola.">Your Front Desk. Runs Itself.</h3>
+          <p data-en="Every inbound call, inquiry, or DM — handled, qualified, and booked into your calendar in under 2 seconds. No staff needed. No missed opportunities. Your pipeline fills itself while your team focuses on delivering."
+             data-es="Cada llamada entrante, consulta o DM — atendido, calificado y agendado en tu calendario en menos de 2 segundos. Sin personal adicional. Sin oportunidades perdidas.">Every inbound call, inquiry, or DM — handled, qualified, and booked into your calendar in under 2 seconds. No staff needed. No missed opportunities. Your pipeline fills itself while your team focuses on delivering.</p>
+          <ul>
+            <li data-en="24/7 AI-powered intake — zero wait time" data-es="Intake con IA 24/7 — cero tiempo de espera">24/7 AI-powered intake — zero wait time</li>
+            <li data-en="Instant qualification & calendar booking" data-es="Calificación instantánea y reserva en calendario">Instant qualification & calendar booking</li>
+            <li data-en="CRM sync — every lead, zero data entry" data-es="Sincronización con CRM — cada lead, cero entrada manual">CRM sync — every lead, zero data entry</li>
+            <li data-en="Works for tech, construction, hospitality & more" data-es="Funciona para tech, construcción, hospitalidad y más">Works for tech, construction, hospitality & more</li>
+          </ul>
+        </div>
+        <div class="sys-demo">
+          <div class="demo-log">
+            <div class="demo-log-line">
+              <div class="demo-dot blue"></div>
+              <span data-en="📲 Incoming call — (305) 555-2847" data-es="📲 Llamada entrante — (305) 555-2847">📲 Incoming call — (305) 555-2847</span>
+            </div>
+            <div class="demo-log-line">
+              <div class="demo-dot yellow"></div>
+              <span data-en="🤖 AI answered — qualifying lead..." data-es="🤖 IA respondió — calificando lead...">🤖 AI answered — qualifying lead...</span>
+            </div>
+            <div class="demo-log-line">
+              <div class="demo-dot green"></div>
+              <span data-en="✅ Appointment booked — Tue 2PM" data-es="✅ Cita reservada — Mar 2PM">✅ Appointment booked — Tue 2PM</span>
+            </div>
+            <div class="demo-log-line">
+              <div class="demo-dot green"></div>
+              <span data-en="📧 Confirmation sent — CRM updated" data-es="📧 Confirmación enviada — CRM actualizado">📧 Confirmation sent — CRM updated</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SYS 1 -->
+    <div class="sys-detail" id="sd1">
+      <div class="sys-detail-inner">
+        <div class="sys-detail-text">
+          <div class="step-tag" data-en="02 — Follow-Up Engine" data-es="02 — Motor de Seguimiento">02 — Follow-Up Engine</div>
+          <h3 class="sys-h3" data-en="Your Sales Team. Without the Payroll." data-es="Tu Equipo de Ventas. Sin la Nómina.">Your Sales Team. Without the Payroll.</h3>
+          <p data-en="Every prospect gets followed up — automatically, persistently, intelligently. WhatsApp, SMS, email. Timed sequences that feel human. Re-engagement flows that recover cold leads. Your conversion rate goes up. Your headcount doesn't."
+             data-es="Cada prospecto recibe seguimiento — automáticamente, persistentemente, inteligentemente. WhatsApp, SMS, email. Secuencias que se sienten humanas. Tu tasa de conversión sube. Tu plantilla no.">Every prospect gets followed up — automatically, persistently, intelligently. WhatsApp, SMS, email. Timed sequences that feel human. Re-engagement flows that recover cold leads. Your conversion rate goes up. Your headcount doesn't.</p>
+          <ul>
+            <li data-en="Multi-channel: WhatsApp, SMS, email — all automated" data-es="Multicanal: WhatsApp, SMS, email — todo automatizado">Multi-channel: WhatsApp, SMS, email — all automated</li>
+            <li data-en="Smart timing — sends when conversion probability is highest" data-es="Timing inteligente — envía cuando la probabilidad de conversión es mayor">Smart timing — sends when conversion is highest</li>
+            <li data-en="Re-engagement sequences for cold pipeline" data-es="Secuencias de reactivación para pipeline frío">Re-engagement sequences for cold pipeline</li>
+            <li data-en="100% of leads followed up. Zero slipping through." data-es="100% de leads con seguimiento. Cero se escapan.">100% of leads followed up. Zero slipping through.</li>
+          </ul>
+        </div>
+        <div class="sys-demo">
+          <div class="demo-chat">
+            <div class="dc-recv" data-en="Hey, interested in your service" data-es="Hola, me interesa tu servicio">Hey, interested in your service</div>
+            <div class="dc-sent" data-en="Great! Can you do Tuesday 2PM? 📅" data-es="¡Genial! ¿Puedes el martes 2PM? 📅">Great! Can you do Tuesday 2PM? 📅</div>
+            <div class="dc-recv" data-en="Yes! That works" data-es="¡Sí! Me funciona">Yes! That works</div>
+            <div class="dc-sent" data-en="✅ Booked! Confirmation sent." data-es="✅ ¡Reservado! Confirmación enviada.">✅ Booked! Confirmation sent.</div>
+            <div class="demo-badge">⚡ <span data-en="0.8s response time" data-es="0.8s tiempo de respuesta">0.8s response time</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SYS 2 -->
+    <div class="sys-detail" id="sd2">
+      <div class="sys-detail-inner">
+        <div class="sys-detail-text">
+          <div class="step-tag" data-en="03 — Inbound Capture" data-es="03 — Captura Inbound">03 — Inbound Capture</div>
+          <h3 class="sys-h3" data-en="Every Touchpoint. A Pipeline Entry." data-es="Cada Punto de Contacto. Una Entrada al Pipeline.">Every Touchpoint. A Pipeline Entry.</h3>
+          <p data-en="Comments, DMs, form fills, story replies — every inbound signal captured, qualified, and routed to the right workflow instantly. No lead falls through. No inquiry goes unanswered."
+             data-es="Comentarios, DMs, formularios, respuestas a historias — cada señal inbound capturada, calificada y enrutada al flujo correcto al instante.">Comments, DMs, form fills, story replies — every inbound signal captured, qualified, and routed to the right workflow instantly. No lead falls through. No inquiry goes unanswered.</p>
+          <ul>
+            <li data-en="Omnichannel capture — IG, LinkedIn, web forms, more" data-es="Captura omnicanal — IG, LinkedIn, formularios web, más">Omnichannel capture — IG, LinkedIn, web forms, more</li>
+            <li data-en="Instant AI qualification — no human needed in the loop" data-es="Calificación instantánea con IA — sin humano en el proceso">Instant AI qualification — no human in the loop</li>
+            <li data-en="Auto-routed to sales, ops, or booking" data-es="Enrutado automáticamente a ventas, ops o reservas">Auto-routed to sales, ops, or booking</li>
+            <li data-en="Responds in seconds. Converts while you sleep." data-es="Responde en segundos. Convierte mientras duermes.">Responds in seconds. Converts while you sleep.</li>
+          </ul>
+        </div>
+        <div class="sys-demo">
+          <div class="demo-chat">
+            <div style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--t4);padding:8px 0;border-bottom:1px solid var(--b);margin-bottom:10px">
+              @newlead_user · Instagram DM
+            </div>
+            <div class="dc-recv" data-en="How much does it cost? 👀" data-es="¿Cuánto cuesta? 👀">How much does it cost? 👀</div>
+            <div class="dc-sent" data-en="We do free estimates! When works?" data-es="¡Hacemos estimados gratis! ¿Cuándo te queda?">We do free estimates! When works?</div>
+            <div class="demo-badge">⚡ <span data-en="Auto-reply in 0.8s — lead captured" data-es="Respuesta automática en 0.8s — lead capturado">Auto-reply in 0.8s — lead captured</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SYS 3 -->
+    <div class="sys-detail" id="sd3">
+      <div class="sys-detail-inner">
+        <div class="sys-detail-text">
+          <div class="step-tag" data-en="04 — Content Engine" data-es="04 — Motor de Contenido">04 — Content Engine</div>
+          <h3 class="sys-h3" data-en="Authority. At Scale. On Autopilot." data-es="Autoridad. A Escala. En Piloto Automático.">Authority. At Scale. On Autopilot.</h3>
+          <p data-en="30+ pieces of content per month — generated, produced, and distributed in your brand voice without you touching it. Your market sees you everywhere. You're doing nothing different."
+             data-es="30+ piezas de contenido por mes — generadas, producidas y distribuidas en tu voz de marca sin que tú las toques. Tu mercado te ve en todas partes.">30+ pieces of content per month — generated, produced, and distributed in your brand voice without you touching it. Your market sees you everywhere. You're doing nothing different.</p>
+          <ul>
+            <li data-en="30+ content pieces/month — zero manual effort" data-es="30+ piezas de contenido/mes — cero esfuerzo manual">30+ content pieces/month — zero manual effort</li>
+            <li data-en="Your brand voice, your expertise — AI amplifies it" data-es="Tu voz de marca, tu expertise — la IA la amplifica">Your brand voice, your expertise — AI amplifies it</li>
+            <li data-en="Published across every relevant platform automatically" data-es="Publicado en todas las plataformas relevantes automáticamente">Published across every platform automatically</li>
+            <li data-en="Inbound leads from content — not just ads" data-es="Leads inbound desde contenido — no solo anuncios">Inbound leads from content — not just ads</li>
+          </ul>
+        </div>
+        <div class="sys-demo">
+          <div class="demo-cal">
+            <div class="demo-cal-header">
+              <div class="demo-cal-day" data-en="MON" data-es="LUN">MON</div>
+              <div class="demo-cal-day" data-en="TUE" data-es="MAR">TUE</div>
+              <div class="demo-cal-day" data-en="WED" data-es="MIÉ">WED</div>
+              <div class="demo-cal-day" data-en="THU" data-es="JUE">THU</div>
+              <div class="demo-cal-day" data-en="FRI" data-es="VIE">FRI</div>
+            </div>
+            <div class="demo-cal-row" style="margin-bottom:6px">
+              <div class="demo-cal-cell cal-post" data-en="LinkedIn Post" data-es="Post LinkedIn">LinkedIn Post</div>
+              <div class="demo-cal-cell cal-video" data-en="Reel" data-es="Reel">Reel</div>
+              <div class="demo-cal-cell cal-email" data-en="Email" data-es="Email">Email</div>
+              <div class="demo-cal-cell cal-post" data-en="Thread" data-es="Thread">Thread</div>
+              <div class="demo-cal-cell cal-video" data-en="Short" data-es="Short">Short</div>
+            </div>
+            <div class="demo-cal-row">
+              <div class="demo-cal-cell cal-email" data-en="Newsletter" data-es="Newsletter">Newsletter</div>
+              <div class="demo-cal-cell cal-post" data-en="Case Study" data-es="Caso">Case Study</div>
+              <div class="demo-cal-cell cal-video" data-en="Reel" data-es="Reel">Reel</div>
+              <div class="demo-cal-cell cal-empty">—</div>
+              <div class="demo-cal-cell cal-post" data-en="LinkedIn" data-es="LinkedIn">LinkedIn</div>
+            </div>
+            <div class="demo-badge" style="margin-top:12px">✍️ <span data-en="All auto-generated. Zero manual work." data-es="Todo auto-generado. Cero trabajo manual.">All auto-generated. Zero manual work.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SYS 4 -->
+    <div class="sys-detail" id="sd4">
+      <div class="sys-detail-inner">
+        <div class="sys-detail-text">
+          <div class="step-tag" data-en="05 — Ops Intelligence" data-es="05 — Inteligencia Operativa">05 — Ops Intelligence</div>
+          <h3 class="sys-h3" data-en="Your Business. One Screen. Full Clarity." data-es="Tu Negocio. Una Pantalla. Claridad Total.">Your Business. One Screen. Full Clarity.</h3>
+          <p data-en="Every workflow, every team, every dollar — visible in one unified intelligence layer. No more switching between tools. No more Excel reports. Decisions get faster. Bottlenecks surface instantly."
+             data-es="Cada flujo de trabajo, cada equipo, cada dólar — visible en una capa de inteligencia unificada. Sin cambiar entre herramientas. Sin reportes en Excel.">Every workflow, every team, every dollar — visible in one unified intelligence layer. No more switching between tools. No more Excel reports. Decisions get faster. Bottlenecks surface instantly.</p>
+          <ul>
+            <li data-en="Live ops dashboard — connected to every system we build" data-es="Dashboard de operaciones en vivo — conectado a cada sistema">Live ops dashboard — connected to every system</li>
+            <li data-en="Revenue attribution by channel & workflow" data-es="Atribución de ingresos por canal y flujo de trabajo">Revenue attribution by channel & workflow</li>
+            <li data-en="Automated weekly reporting — no manual pull" data-es="Reporte semanal automatizado — sin extracción manual">Automated weekly reporting — no manual pull</li>
+            <li data-en="Spots inefficiency before it costs you" data-es="Detecta ineficiencia antes de que te cueste">Spots inefficiency before it costs you</li>
+          </ul>
+        </div>
+        <div class="sys-demo">
+          <div class="demo-dash">
+            <div class="demo-dash-title" data-en="Monthly Revenue" data-es="Ingresos Mensuales">Monthly Revenue</div>
+            <div class="dash-bars" id="dashBars">
+              <div class="dash-bar" style="height:28%;background:var(--light)"></div>
+              <div class="dash-bar" style="height:42%;background:var(--light)"></div>
+              <div class="dash-bar" style="height:55%;background:var(--light)"></div>
+              <div class="dash-bar" style="height:68%;background:var(--light)"></div>
+              <div class="dash-bar" style="height:88%;background:var(--gold)"></div>
+            </div>
+            <div class="dash-metrics">
+              <div class="dash-metric">
+                <div class="dash-metric-num">847</div>
+                <div class="dash-metric-label" data-en="Leads this month" data-es="Leads este mes">Leads this month</div>
+              </div>
+              <div class="dash-metric">
+                <div class="dash-metric-num">5.8×</div>
+                <div class="dash-metric-label" data-en="ROI" data-es="ROI">ROI</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-  <!-- Feature 02 -->
-  <div class="feature-row reverse reveal">
-    <div class="demo-box">
-      <div class="chat-demo">
-        <div class="bubble recv" data-en="Hey, interested in your service" data-es="Hola, me interesa tu servicio">Hey, interested in your service</div>
-        <div class="bubble sent" data-en="Great! Can you do Tuesday 2PM? 📅" data-es="¡Genial! ¿Puedes el martes 2PM? 📅">Great! Can you do Tuesday 2PM? 📅</div>
-        <div class="bubble recv" data-en="Yes! That works" data-es="¡Sí! Me funciona">Yes! That works</div>
-        <div class="bubble sent" data-en="✅ Booked! Confirmation sent." data-es="✅ ¡Reservado! Confirmación enviada.">✅ Booked! Confirmation sent.</div>
-      </div>
-    </div>
-    <div class="feature-text">
-      <div class="feature-tag" data-en="02 — AI Follow-Up Engine" data-es="02 — Motor de Seguimiento con IA">02 — AI Follow-Up Engine</div>
-      <h3 data-en="Your Sales Team. Without the Payroll." data-es="Tu Equipo de Ventas. Sin la Nómina.">Your Sales Team. Without the Payroll.</h3>
-      <p data-en="Every prospect gets followed up — automatically, persistently, intelligently. WhatsApp, SMS, email. Timed sequences that feel human. Re-engagement flows that recover cold leads. Your conversion rate goes up. Your headcount doesn't." data-es="Cada prospecto recibe seguimiento — automáticamente, persistentemente, inteligentemente. WhatsApp, SMS, email. Secuencias que se sienten humanas. Tu tasa de conversión sube. Tu plantilla no.">Every prospect gets followed up — automatically, persistently, intelligently. WhatsApp, SMS, email. Timed sequences that feel human. Re-engagement flows that recover cold leads. Your conversion rate goes up. Your headcount doesn't.</p>
-      <ul>
-        <li data-en="Multi-channel: WhatsApp, SMS, email — all automated" data-es="Multicanal: WhatsApp, SMS, email — todo automatizado">Multi-channel: WhatsApp, SMS, email — all automated</li>
-        <li data-en="Smart timing — sends when conversion probability is highest" data-es="Timing inteligente — envía cuando la probabilidad de conversión es mayor">Smart timing — sends when conversion probability is highest</li>
-        <li data-en="Re-engagement sequences for cold pipeline" data-es="Secuencias de reactivación para pipeline frío">Re-engagement sequences for cold pipeline</li>
-        <li data-en="100% of leads followed up. Zero slipping through." data-es="100% de leads con seguimiento. Cero se escapan.">100% of leads followed up. Zero slipping through.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Feature 03 -->
-  <div class="feature-row reveal">
-    <div class="feature-text">
-      <div class="feature-tag" data-en="03 — Social & Inbound Capture" data-es="03 — Captura Social y de Inbound">03 — Social & Inbound Capture</div>
-      <h3 data-en="Every Touchpoint. A Pipeline Entry." data-es="Cada Punto de Contacto. Una Entrada al Pipeline.">Every Touchpoint. A Pipeline Entry.</h3>
-      <p data-en="Comments, DMs, form fills, story replies — every inbound signal captured, qualified, and routed to the right workflow instantly. No lead falls through. No inquiry goes unanswered. Your brand responds at scale, 24/7." data-es="Comentarios, DMs, formularios, respuestas a historias — cada señal inbound capturada, calificada y enrutada al flujo correcto al instante.">Comments, DMs, form fills, story replies — every inbound signal captured, qualified, and routed to the right workflow instantly. No lead falls through. No inquiry goes unanswered. Your brand responds at scale, 24/7.</p>
-      <ul>
-        <li data-en="Omnichannel capture — IG, LinkedIn, web forms, more" data-es="Captura omnicanal — IG, LinkedIn, formularios web, más">Omnichannel capture — IG, LinkedIn, web forms, more</li>
-        <li data-en="Instant AI qualification — no human needed in the loop" data-es="Calificación instantánea con IA — sin humano en el proceso">Instant AI qualification — no human needed in the loop</li>
-        <li data-en="Auto-routed to sales, ops, or booking — your call" data-es="Enrutado automáticamente a ventas, ops o reservas">Auto-routed to sales, ops, or booking — your call</li>
-        <li data-en="Responds in seconds. Converts while you sleep." data-es="Responde en segundos. Convierte mientras duermes.">Responds in seconds. Converts while you sleep.</li>
-      </ul>
-    </div>
-    <div class="demo-box">
-      <div class="ig-header">@newlead_user</div>
-      <div class="ig-msg" data-en="How much does it cost? 👀" data-es="¿Cuánto cuesta? 👀">How much does it cost? 👀</div>
-      <div class="ig-msg" data-en="We do free estimates! When works?" data-es="¡Hacemos estimados gratis! ¿Cuándo te queda?">We do free estimates! When works?</div>
-      <div class="ig-badge" data-en="⚡ Auto-reply sent in 0.8s — lead captured" data-es="⚡ Respuesta automática en 0.8s — lead capturado">⚡ Auto-reply sent in 0.8s — lead captured</div>
-    </div>
-  </div>
-
-  <!-- Feature 04 -->
-  <div class="feature-row reverse reveal">
-    <div class="demo-box">
-      <div class="cal-grid">
-        <div class="cal-day">Mon</div><div class="cal-day">Tue</div><div class="cal-day">Wed</div><div class="cal-day">Thu</div><div class="cal-day">Fri</div>
-        <div class="cal-cell gold">Blog Post</div><div class="cal-cell">Reel</div><div class="cal-cell gold">Case Study</div><div class="cal-cell">Carousel</div><div class="cal-cell gold">Newsletter</div>
-        <div class="cal-cell">Thread</div><div class="cal-cell gold">Video</div><div class="cal-cell">Infographic</div><div class="cal-cell gold">Blog Post</div><div class="cal-cell">Story</div>
-        <div class="cal-cell gold">Podcast</div><div class="cal-cell">Reel</div><div class="cal-cell gold">Article</div><div class="cal-cell">Carousel</div><div class="cal-cell gold">Recap</div>
-      </div>
-    </div>
-    <div class="feature-text">
-      <div class="feature-tag" data-en="04 — AI Content Engine" data-es="04 — Motor de Contenido con IA">04 — AI Content Engine</div>
-      <h3 data-en="Authority. At Scale. On Autopilot." data-es="Autoridad. A Escala. En Piloto Automático.">Authority. At Scale. On Autopilot.</h3>
-      <p data-en="30+ pieces of content per month — generated, produced, and distributed in your brand voice without you touching it. Thought leadership, case studies, short-form video. Your market sees you everywhere. You're doing nothing different." data-es="30+ piezas de contenido por mes — generadas, producidas y distribuidas en tu voz de marca sin que tú las toques.">30+ pieces of content per month — generated, produced, and distributed in your brand voice without you touching it. Thought leadership, case studies, short-form video. Your market sees you everywhere. You're doing nothing different.</p>
-      <ul>
-        <li data-en="30+ content pieces/month — zero manual effort" data-es="30+ piezas de contenido/mes — cero esfuerzo manual">30+ content pieces/month — zero manual effort</li>
-        <li data-en="Your brand voice, your expertise — AI amplifies it" data-es="Tu voz de marca, tu expertise — la IA la amplifica">Your brand voice, your expertise — AI amplifies it</li>
-        <li data-en="Published across every relevant platform automatically" data-es="Publicado en todas las plataformas relevantes automáticamente">Published across every relevant platform automatically</li>
-        <li data-en="Inbound leads from content — not just ads" data-es="Leads inbound desde contenido — no solo anuncios">Inbound leads from content — not just ads</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Feature 05 -->
-  <div class="feature-row reveal">
-    <div class="feature-text">
-      <div class="feature-tag" data-en="05 — Ops Intelligence Layer" data-es="05 — Capa de Inteligencia Operativa">05 — Ops Intelligence Layer</div>
-      <h3 data-en="Your Business. One Screen. Full Clarity." data-es="Tu Negocio. Una Pantalla. Claridad Total.">Your Business. One Screen. Full Clarity.</h3>
-      <p data-en="Every workflow, every team, every dollar — visible in one unified intelligence layer. No more switching between tools. No more Excel reports. Decisions get faster. Bottlenecks surface instantly. You scale with confidence." data-es="Cada flujo de trabajo, cada equipo, cada dólar — visible en una capa de inteligencia unificada. Sin cambiar entre herramientas. Sin reportes en Excel.">Every workflow, every team, every dollar — visible in one unified intelligence layer. No more switching between tools. No more Excel reports. Decisions get faster. Bottlenecks surface instantly. You scale with confidence.</p>
-      <ul>
-        <li data-en="Live ops dashboard — connected to every system we build" data-es="Dashboard de operaciones en vivo — conectado a cada sistema que construimos">Live ops dashboard — connected to every system we build</li>
-        <li data-en="Revenue attribution by channel & workflow" data-es="Atribución de ingresos por canal y flujo de trabajo">Revenue attribution by channel & workflow</li>
-        <li data-en="Automated weekly reporting — no manual pull" data-es="Reporte semanal automatizado — sin extracción manual">Automated weekly reporting — no manual pull</li>
-        <li data-en="Spots inefficiency before it costs you" data-es="Detecta ineficiencia antes de que te cueste">Spots inefficiency before it costs you</li>
-      </ul>
-    </div>
-    <div class="demo-box">
-      <div style="font-weight:700;margin-bottom:8px" data-en="Monthly Revenue" data-es="Ingresos Mensuales">Monthly Revenue</div>
-      <div class="dash-bars">
-        <div class="dash-bar" style="height:30%;background:#e5e7eb"></div>
-        <div class="dash-bar" style="height:45%;background:#e5e7eb"></div>
-        <div class="dash-bar" style="height:55%;background:#e5e7eb"></div>
-        <div class="dash-bar" style="height:70%;background:#e5e7eb"></div>
-        <div class="dash-bar" style="height:88%;background:#F5C000"></div>
-      </div>
-      <div class="dash-metrics">
-        <div><div class="dash-metric-num">847</div><div class="dash-metric-label" data-en="Leads" data-es="Leads">Leads</div></div>
-        <div><div class="dash-metric-num">5.8x</div><div class="dash-metric-label" data-en="ROI" data-es="ROI">ROI</div></div>
-      </div>
-    </div>
-  </div>
-</div>
 </section>
 
-<!-- TRANSFORMATION -->
-<section id="transformation">
-<div class="container" style="text-align:center">
-  <h2 class="reveal" data-en="Same Business. Different Operating System." data-es="El Mismo Negocio. Un Sistema Operativo Diferente.">Same Business. Different Operating System.</h2>
-  <div class="compare-table reveal d1">
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th data-en="BEFORE XGN" data-es="ANTES DE XGN">BEFORE XGN</th>
-          <th data-en="AFTER 45 DAYS" data-es="DESPUÉS DE 45 DÍAS">AFTER 45 DAYS</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-en="Inbound leads/mo" data-es="Leads inbound/mes">Inbound leads/mo</td>
-          <td>23</td>
-          <td><span class="count-up" data-target="847">0</span></td>
-        </tr>
-        <tr>
-          <td data-en="Monthly revenue" data-es="Ingresos mensuales">Monthly revenue</td>
-          <td>$8,200</td>
-          <td><span class="count-up" data-target="31400" data-prefix="$">$0</span></td>
-        </tr>
-        <tr>
-          <td data-en="Ops handled by AI" data-es="Ops gestionadas por IA">Ops handled by AI</td>
-          <td>0%</td>
-          <td><span class="count-up" data-target="82" data-suffix="%">0%</span></td>
-        </tr>
-        <tr>
-          <td data-en="Inquiries answered instantly" data-es="Consultas respondidas al instante">Inquiries answered instantly</td>
-          <td>12%</td>
-          <td><span class="count-up" data-target="100" data-suffix="%">0%</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="chips reveal d2">
-    <span class="chip" data-en="AI Intake & Booking" data-es="Intake y Reservas con IA">AI Intake & Booking</span>
-    <span class="chip" data-en="AI Follow-Up Engine" data-es="Motor de Seguimiento IA">AI Follow-Up Engine</span>
-    <span class="chip" data-en="Omnichannel Lead Capture" data-es="Captura de Leads Omnicanal">Omnichannel Lead Capture</span>
-    <span class="chip" data-en="AI Content Engine" data-es="Motor de Contenido IA">AI Content Engine</span>
-    <span class="chip" data-en="Ops Intelligence Dashboard" data-es="Dashboard de Inteligencia Operativa">Ops Intelligence Dashboard</span>
-  </div>
-  <div class="roi-card reveal d3">
-    <div class="roi-row1" data-en="Up to 5–8x ROI on automation investment" data-es="Hasta 5–8x ROI en inversión de automatización">Up to 5–8x ROI on automation investment</div>
-    <div class="roi-row2" data-en="$2,800/mo invested → $20,400/mo net profit" data-es="$2,800/mes invertidos → $20,400/mes de ganancia neta">$2,800/mo invested → $20,400/mo net profit</div>
-    <div class="roi-track"><div id="roiBar"></div></div>
-  </div>
-</div>
-</section>
+<!-- TRANSFORMATION (dark section) -->
+<section id="transform">
+  <div class="container">
+    <div class="rv"><span class="section-label" data-en="RESULTS" data-es="RESULTADOS">RESULTS</span></div>
+    <h2 class="section-h2 rv d1" data-en="Same Business. Different Operating System." data-es="El Mismo Negocio. Un Sistema Operativo Diferente.">Same Business. Different Operating System.</h2>
 
-<!-- PHASES -->
-<section id="phases">
-<div class="container" style="text-align:center">
-  <div class="label reveal" data-en="HOW WE WORK" data-es="CÓMO TRABAJAMOS">HOW WE WORK</div>
-  <h2 class="reveal" data-en="Four Phases. Infinite Leverage." data-es="Cuatro Fases. Apalancamiento Infinito.">Four Phases. Infinite Leverage.</h2>
-  <p class="sub reveal" style="max-width:580px;margin:0 auto;color:var(--text-3);margin-bottom:72px" data-en="Every XGN engagement follows the same battle-tested process. No guesswork. No wasted time. Just results." data-es="Cada proyecto de XGN sigue el mismo proceso probado. Sin conjeturas. Sin tiempo perdido. Solo resultados.">Every XGN engagement follows the same battle-tested process. No guesswork. No wasted time. Just results.</p>
-  <div class="phases-grid">
-    <div class="card phase-card reveal d1" style="text-align:left">
-      <span class="phase-badge" data-en="PHASE 01" data-es="FASE 01">PHASE 01</span>
-      <h3 data-en="AI Audit" data-es="Auditoría de IA">AI Audit</h3>
-      <p data-en="We analyze your existing workflows, tech stack, and operations to identify exactly where AI creates the most leverage. You get a clear map of opportunities." data-es="Analizamos tus flujos de trabajo, stack tecnológico y operaciones para identificar exactamente dónde la IA genera más apalancamiento. Obtienes un mapa claro de oportunidades.">We analyze your existing workflows, tech stack, and operations to identify exactly where AI creates the most leverage. You get a clear map of opportunities.</p>
-    </div>
-    <div class="card phase-card reveal d2" style="text-align:left">
-      <span class="phase-badge" data-en="PHASE 02" data-es="FASE 02">PHASE 02</span>
-      <h3 data-en="System Design" data-es="Diseño de Sistema">System Design</h3>
-      <p data-en="We design a custom AI integration plan built around what you already use. No rip-and-replace. No new software you don't need." data-es="Diseñamos un plan de integración de IA personalizado basado en lo que ya usas. Sin reemplazos. Sin software nuevo que no necesitas.">We design a custom AI integration plan built around what you already use. No rip-and-replace. No new software you don't need.</p>
-    </div>
-    <div class="card phase-card reveal d3" style="text-align:left">
-      <span class="phase-badge" data-en="PHASE 03" data-es="FASE 03">PHASE 03</span>
-      <h3 data-en="Build & Deploy" data-es="Construcción e Implementación">Build & Deploy</h3>
-      <p data-en="We build and deploy the automations directly into your workflows. Your team keeps working — the machine just gets smarter." data-es="Construimos e implementamos las automatizaciones directamente en tus flujos de trabajo. Tu equipo sigue trabajando — la máquina solo se vuelve más inteligente.">We build and deploy the automations directly into your workflows. Your team keeps working — the machine just gets smarter.</p>
-    </div>
-    <div class="card phase-card reveal d4" style="text-align:left">
-      <span class="phase-badge" data-en="PHASE 04" data-es="FASE 04">PHASE 04</span>
-      <h3 data-en="Scale & Optimize" data-es="Escalar y Optimizar">Scale & Optimize</h3>
-      <p data-en="We monitor results, eliminate bottlenecks, and continuously optimize so your ROI compounds over time." data-es="Monitoreamos resultados, eliminamos cuellos de botella y optimizamos continuamente para que tu ROI se capitalice con el tiempo.">We monitor results, eliminate bottlenecks, and continuously optimize so your ROI compounds over time.</p>
+    <div class="transform-grid">
+      <div class="rv d2">
+        <div class="compare-table">
+          <div class="compare-head">
+            <div></div>
+            <div data-en="BEFORE XGN" data-es="ANTES DE XGN">BEFORE XGN</div>
+            <div class="after-head" data-en="AFTER 45 DAYS" data-es="DESPUÉS DE 45 DÍAS">AFTER 45 DAYS</div>
+          </div>
+          <div class="compare-row">
+            <div class="c-label" data-en="Inbound leads/mo" data-es="Leads inbound/mes">Inbound leads/mo</div>
+            <div class="c-before">23</div>
+            <div class="c-after"><span class="cu" data-target="847">0</span></div>
+          </div>
+          <div class="compare-row">
+            <div class="c-label" data-en="Monthly revenue" data-es="Ingresos mensuales">Monthly revenue</div>
+            <div class="c-before">$8,200</div>
+            <div class="c-after">$<span class="cu" data-target="31400">0</span></div>
+          </div>
+          <div class="compare-row">
+            <div class="c-label" data-en="Ops handled by AI" data-es="Ops gestionadas por IA">Ops handled by AI</div>
+            <div class="c-before">0%</div>
+            <div class="c-after"><span class="cu" data-target="82">0</span>%</div>
+          </div>
+          <div class="compare-row">
+            <div class="c-label" data-en="Inquiries answered instantly" data-es="Consultas respondidas al instante">Answered instantly</div>
+            <div class="c-before">12%</div>
+            <div class="c-after"><span class="cu" data-target="100">0</span>%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="transform-right rv d3">
+        <div class="roi-card">
+          <div class="roi-title" data-en="Up to 5–8× ROI on automation investment" data-es="Hasta 5–8× ROI en inversión de automatización">Up to 5–8× ROI on automation investment</div>
+          <div class="roi-sub" data-en="$2,800/mo invested → $20,400/mo net profit" data-es="$2,800/mes invertidos → $20,400/mes de ganancia neta">$2,800/mo invested → $20,400/mo net profit</div>
+          <div class="roi-track"><div class="roi-fill" id="roiFill"></div></div>
+        </div>
+        <div class="chips-wrap">
+          <span class="chip" data-en="AI Intake & Booking" data-es="Intake y Reservas IA">AI Intake & Booking</span>
+          <span class="chip" data-en="AI Follow-Up Engine" data-es="Motor de Seguimiento IA">AI Follow-Up Engine</span>
+          <span class="chip" data-en="Omnichannel Lead Capture" data-es="Captura de Leads Omnicanal">Omnichannel Lead Capture</span>
+          <span class="chip" data-en="AI Content Engine" data-es="Motor de Contenido IA">AI Content Engine</span>
+          <span class="chip" data-en="Ops Intelligence Dashboard" data-es="Dashboard de Inteligencia Operativa">Ops Intelligence Dashboard</span>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section id="testimonials">
-<div class="container">
-  <div class="label reveal" data-en="RESULTS" data-es="RESULTADOS">RESULTS</div>
-  <h2 class="reveal" data-en="The Numbers Don't Pitch. They Prove." data-es="Los Números No Venden. Prueban.">The Numbers Don't Pitch. They Prove.</h2>
-  <div class="test-grid">
-    <div class="card test-card reveal d1">
-      <span class="test-badge" data-en="+$23K revenue / 45 days" data-es="+$23K ingresos / 45 días">+$23K revenue / 45 days</span>
-      <div class="test-quote" data-en="I was skeptical. Every agency promises results. But XGN didn't pitch me — they showed me my own numbers and where I was bleeding money. In 45 days we added $23K in monthly revenue. The intake system alone recovered 3 lost jobs in the first week." data-es="Era escéptico. Cada agencia promete resultados. Pero XGN no me hizo un pitch — me mostraron mis propios números y dónde estaba perdiendo dinero. En 45 días añadimos $23K en ingresos mensuales.">I was skeptical. Every agency promises results. But XGN didn't pitch me — they showed me my own numbers and where I was bleeding money. In 45 days we added $23K in monthly revenue. The intake system alone recovered 3 lost jobs in the first week.</div>
-      <div class="test-role" data-en="Duct Cleaning Co. — Broward County, FL" data-es="Empresa de Limpieza de Ductos — Broward County, FL">Duct Cleaning Co. — Broward County, FL</div>
-      <div class="test-chips">
-        <span class="test-chip" data-en="Home Services" data-es="Servicios del Hogar">Home Services</span>
-        <span class="test-chip" data-en="Broward, FL" data-es="Broward, FL">Broward, FL</span>
-        <span class="test-chip" data-en="Full AI Stack" data-es="Stack de IA Completo">Full AI Stack</span>
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="rv"><span class="section-label" data-en="CLIENT RESULTS" data-es="RESULTADOS DE CLIENTES">CLIENT RESULTS</span></div>
+    <h2 class="section-h2 rv d1" data-en="The Numbers Don't Pitch. They Prove." data-es="Los Números No Venden. Prueban.">The Numbers Don't Pitch. They Prove.</h2>
+    <div class="testi-grid">
+      <div class="testi-card rv d2">
+        <div class="testi-badge" data-en="+$23K revenue / 45 days" data-es="+$23K ingresos / 45 días">+$23K revenue / 45 days</div>
+        <p class="testi-quote" data-en="I was skeptical. Every agency promises results. But XGN didn't pitch me — they showed me my own numbers and where I was bleeding money. In 45 days we added $23K in monthly revenue. The intake system alone recovered 3 lost jobs in the first week."
+           data-es="Era escéptico. Cada agencia promete resultados. Pero XGN no me hizo un pitch — me mostraron mis propios números y dónde estaba perdiendo dinero. En 45 días añadimos $23K en ingresos mensuales.">"I was skeptical. Every agency promises results. But XGN didn't pitch me — they showed me my own numbers and where I was bleeding money. In 45 days we added $23K in monthly revenue. The intake system alone recovered 3 lost jobs in the first week."</p>
+        <div class="testi-role" data-en="Duct Cleaning Co. — Broward County, FL" data-es="Empresa de Limpieza de Ductos — Broward County, FL">Duct Cleaning Co. — Broward County, FL</div>
+        <div class="testi-chips">
+          <span class="testi-chip" data-en="Home Services" data-es="Servicios del Hogar">Home Services</span>
+          <span class="testi-chip">Broward, FL</span>
+          <span class="testi-chip" data-en="Full AI Stack" data-es="Stack de IA Completo">Full AI Stack</span>
+        </div>
       </div>
-    </div>
-    <div class="card test-card reveal d2">
-      <span class="test-badge" data-en="4.5x close rate multiplier" data-es="Multiplicador de cierre 4.5x">4.5x close rate multiplier</span>
-      <div class="test-quote" data-en="Insurance is a grind. Everyone competes on price, leads ghost you, follow-up is manual hell. XGN integrated an AI layer into our existing CRM and workflow. Close rate went from 4% to 18% in 6 weeks. Same leads. Different system." data-es="Los seguros son agotadores. Todos compiten por precio, los leads te ignoran, el seguimiento es un infierno manual. La tasa de cierre pasó de 4% a 18% en 6 semanas. Los mismos leads. Un sistema diferente.">Insurance is a grind. Everyone competes on price, leads ghost you, follow-up is manual hell. XGN integrated an AI layer into our existing CRM and workflow. Close rate went from 4% to 18% in 6 weeks. Same leads. Different system.</div>
-      <div class="test-role" data-en="Insurance Agency — Fort Lauderdale, FL" data-es="Agencia de Seguros — Fort Lauderdale, FL">Insurance Agency — Fort Lauderdale, FL</div>
-      <div class="test-chips">
-        <span class="test-chip" data-en="Insurance" data-es="Seguros">Insurance</span>
-        <span class="test-chip" data-en="Fort Lauderdale" data-es="Fort Lauderdale">Fort Lauderdale</span>
-        <span class="test-chip" data-en="AI Follow-Up Layer" data-es="Capa de Seguimiento IA">AI Follow-Up Layer</span>
+      <div class="testi-card rv d3">
+        <div class="testi-badge" data-en="4.5× close rate multiplier" data-es="Multiplicador de cierre 4.5×">4.5× close rate multiplier</div>
+        <p class="testi-quote" data-en="Insurance is a grind. Everyone competes on price, leads ghost you, follow-up is manual hell. XGN integrated an AI layer into our existing CRM and workflow. Close rate went from 4% to 18% in 6 weeks. Same leads. Different system."
+           data-es="Los seguros son agotadores. Todos compiten por precio, los leads te ignoran, el seguimiento es un infierno manual. La tasa de cierre pasó de 4% a 18% en 6 semanas. Los mismos leads. Un sistema diferente.">"Insurance is a grind. Everyone competes on price, leads ghost you, follow-up is manual hell. XGN integrated an AI layer into our existing CRM and workflow. Close rate went from 4% to 18% in 6 weeks. Same leads. Different system."</p>
+        <div class="testi-role" data-en="Insurance Agency — Fort Lauderdale, FL" data-es="Agencia de Seguros — Fort Lauderdale, FL">Insurance Agency — Fort Lauderdale, FL</div>
+        <div class="testi-chips">
+          <span class="testi-chip" data-en="Insurance" data-es="Seguros">Insurance</span>
+          <span class="testi-chip">Fort Lauderdale</span>
+          <span class="testi-chip" data-en="AI Follow-Up Layer" data-es="Capa de Seguimiento IA">AI Follow-Up Layer</span>
+        </div>
       </div>
-    </div>
-    <div class="card test-card reveal d3">
-      <span class="test-badge" data-en="34% overhead reduction" data-es="34% reducción de gastos generales">34% overhead reduction</span>
-      <div class="test-quote" data-en="We were growing but our ops costs were growing faster. XGN mapped every manual process we had and automated the ones eating margin. In 60 days we cut overhead by 34% without cutting anyone. That's $6K/mo back in our pocket every month." data-es="Estábamos creciendo pero nuestros costos operativos crecían más rápido. En 60 días redujimos los gastos generales en 34% sin despedir a nadie. Eso son $6K/mes de vuelta en nuestro bolsillo.">We were growing but our ops costs were growing faster. XGN mapped every manual process we had and automated the ones eating margin. In 60 days we cut overhead by 34% without cutting anyone. That's $6K/mo back in our pocket every month.</div>
-      <div class="test-role" data-en="Restaurant Group — Miami, FL" data-es="Grupo de Restaurantes — Miami, FL">Restaurant Group — Miami, FL</div>
-      <div class="test-chips">
-        <span class="test-chip" data-en="Hospitality" data-es="Hospitalidad">Hospitality</span>
-        <span class="test-chip" data-en="Miami, FL" data-es="Miami, FL">Miami, FL</span>
-        <span class="test-chip" data-en="Ops Automation" data-es="Automatización de Operaciones">Ops Automation</span>
+      <div class="testi-card rv d4">
+        <div class="testi-badge" data-en="34% overhead reduction" data-es="34% reducción de gastos generales">34% overhead reduction</div>
+        <p class="testi-quote" data-en="We were growing but our ops costs were growing faster. XGN mapped every manual process we had and automated the ones eating margin. In 60 days we cut overhead by 34% without cutting anyone. That's $6K/mo back in our pocket every month."
+           data-es="Estábamos creciendo pero nuestros costos operativos crecían más rápido. En 60 días redujimos los gastos generales en 34% sin despedir a nadie. Eso son $6K/mes de vuelta en nuestro bolsillo.">"We were growing but our ops costs were growing faster. XGN mapped every manual process we had and automated the ones eating margin. In 60 days we cut overhead by 34% without cutting anyone. That's $6K/mo back in our pocket every month."</p>
+        <div class="testi-role" data-en="Restaurant Group — Miami, FL" data-es="Grupo de Restaurantes — Miami, FL">Restaurant Group — Miami, FL</div>
+        <div class="testi-chips">
+          <span class="testi-chip" data-en="Hospitality" data-es="Hospitalidad">Hospitality</span>
+          <span class="testi-chip">Miami, FL</span>
+          <span class="testi-chip" data-en="Ops Automation" data-es="Automatización de Operaciones">Ops Automation</span>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </section>
 
-<!-- PROCESS -->
-<section id="process">
-<div class="container">
-  <div class="label reveal" data-en="THE PROCESS" data-es="EL PROCESO">THE PROCESS</div>
-  <h2 class="reveal" data-en="From Audit to Leverage in 30 Days" data-es="De Auditoría a Apalancamiento en 30 Días">From Audit to Leverage in 30 Days</h2>
-  <div class="process-steps">
-    <div class="step reveal d1">
-      <div class="step-num">01</div>
-      <h3 data-en="Free AI Growth Audit" data-es="Auditoría de Crecimiento IA Gratis">Free AI Growth Audit</h3>
-      <p data-en="One 15-minute call. We map your current workflows, identify where AI creates the most leverage, and quantify what it's worth — in dollars. No pitch. No fluff. Just a precise diagnosis of your biggest untapped opportunities." data-es="Una llamada de 15 minutos. Mapeamos tus flujos de trabajo actuales, identificamos dónde la IA crea más apalancamiento y cuantificamos lo que vale — en dólares.">One 15-minute call. We map your current workflows, identify where AI creates the most leverage, and quantify what it's worth — in dollars. No pitch. No fluff. Just a precise diagnosis of your biggest untapped opportunities.</p>
-      <div class="step-guarantee" data-en="If we can't find $10K/mo in untapped leverage — we won't work together." data-es="Si no encontramos $10K/mes en apalancamiento sin aprovechar — no trabajamos juntos.">If we can't find $10K/mo in untapped leverage — we won't work together.</div>
+<!-- PROCESS / TIMELINE -->
+<section id="process" class="section" style="background:var(--off)">
+  <div class="container">
+    <div class="process-header rv">
+      <span class="section-label" data-en="THE PROCESS" data-es="EL PROCESO">THE PROCESS</span>
+      <h2 class="section-h2" data-en="From Audit to Leverage in 30 Days" data-es="De Auditoría a Apalancamiento en 30 Días">From Audit to Leverage in 30 Days</h2>
+      <p class="section-sub" data-en="Every XGN engagement follows the same battle-tested process. No guesswork. No wasted time. Just results." data-es="Cada proyecto de XGN sigue el mismo proceso probado. Sin conjeturas. Sin tiempo perdido. Solo resultados.">Every XGN engagement follows the same battle-tested process. No guesswork. No wasted time. Just results.</p>
     </div>
-    <div class="step reveal d2">
-      <div class="step-num">02</div>
-      <h3 data-en="We Build Your AI Layer" data-es="Construimos Tu Capa de IA">We Build Your AI Layer</h3>
-      <p data-en="No rip-and-replace. We integrate AI into your existing tools, teams, and workflows — not on top of them. Custom-built for your industry, your ops, your growth goals. In 14 days you're running a fundamentally more efficient operation." data-es="Sin reemplazos. Integramos IA en tus herramientas, equipos y flujos de trabajo existentes — no sobre ellos. Construido a medida para tu industria.">No rip-and-replace. We integrate AI into your existing tools, teams, and workflows — not on top of them. Custom-built for your industry, your ops, your growth goals. In 14 days you're running a fundamentally more efficient operation.</p>
-      <div class="step-guarantee" data-en="14-day integration. Built into your workflow. No disruption." data-es="Integración en 14 días. Construida en tu flujo de trabajo. Sin interrupciones.">14-day integration. Built into your workflow. No disruption.</div>
-    </div>
-    <div class="step reveal d3">
-      <div class="step-num">03</div>
-      <h3 data-en="Run Leaner. Earn More." data-es="Opera Más Eficiente. Gana Más.">Run Leaner. Earn More.</h3>
-      <p data-en="Your AI layer goes live and starts compounding immediately. Less overhead. Faster decisions. More revenue from the same inputs. Most clients see meaningful efficiency gains in week one and hit full stride at 30–45 days. Average: +$18K/mo added, costs reduced." data-es="Tu capa de IA se activa y empieza a capitalizar de inmediato. La mayoría de clientes ven mejoras en la primera semana. Promedio: +$18K/mes añadidos.">Your AI layer goes live and starts compounding immediately. Less overhead. Faster decisions. More revenue from the same inputs. Most clients see meaningful efficiency gains in week one and hit full stride at 30–45 days. Average: +$18K/mo added, costs reduced.</p>
-      <div class="step-guarantee" data-en="Avg. +$18K/mo added. Ops costs down. Margins up." data-es="Promedio +$18K/mes añadidos. Costos operativos abajo. Márgenes arriba.">Avg. +$18K/mo added. Ops costs down. Margins up.</div>
+    <div class="process-timeline">
+      <div class="process-step rv d1">
+        <div class="step-num-wrap"><div class="step-num">01</div></div>
+        <div class="step-body">
+          <div class="step-tag" data-en="FREE — 15 MINUTES" data-es="GRATIS — 15 MINUTOS">FREE — 15 MINUTES</div>
+          <div class="step-title" data-en="Free AI Growth Audit" data-es="Auditoría de Crecimiento IA Gratis">Free AI Growth Audit</div>
+          <p data-en="One 15-minute call. We map your current workflows, identify where AI creates the most leverage, and quantify what it's worth — in dollars. No pitch. No fluff. Just a precise diagnosis of your biggest untapped opportunities."
+             data-es="Una llamada de 15 minutos. Mapeamos tus flujos de trabajo actuales, identificamos dónde la IA crea más apalancamiento y cuantificamos lo que vale — en dólares.">One 15-minute call. We map your current workflows, identify where AI creates the most leverage, and quantify what it's worth — in dollars. No pitch. No fluff. Just a precise diagnosis of your biggest untapped opportunities.</p>
+          <div class="step-guarantee" data-en="If we can't find $10K/mo in untapped leverage — we won't work together." data-es="Si no encontramos $10K/mes en apalancamiento sin aprovechar — no trabajamos juntos.">If we can't find $10K/mo in untapped leverage — we won't work together.</div>
+        </div>
+      </div>
+      <div class="process-step rv d2">
+        <div class="step-num-wrap"><div class="step-num">02</div></div>
+        <div class="step-body">
+          <div class="step-tag" data-en="14 DAYS" data-es="14 DÍAS">14 DAYS</div>
+          <div class="step-title" data-en="We Build Your AI Layer" data-es="Construimos Tu Capa de IA">We Build Your AI Layer</div>
+          <p data-en="No rip-and-replace. We integrate AI into your existing tools, teams, and workflows — not on top of them. Custom-built for your industry, your ops, your growth goals. In 14 days you're running a fundamentally more efficient operation."
+             data-es="Sin reemplazos. Integramos IA en tus herramientas, equipos y flujos de trabajo existentes — no sobre ellos. Construido a medida para tu industria, tus ops, tus objetivos de crecimiento.">No rip-and-replace. We integrate AI into your existing tools, teams, and workflows — not on top of them. Custom-built for your industry, your ops, your growth goals. In 14 days you're running a fundamentally more efficient operation.</p>
+          <div class="step-guarantee" data-en="14-day integration. Built into your workflow. No disruption." data-es="Integración en 14 días. Construida en tu flujo de trabajo. Sin interrupciones.">14-day integration. Built into your workflow. No disruption.</div>
+        </div>
+      </div>
+      <div class="process-step rv d3">
+        <div class="step-num-wrap"><div class="step-num">03</div></div>
+        <div class="step-body">
+          <div class="step-tag" data-en="30–45 DAYS" data-es="30–45 DÍAS">30–45 DAYS</div>
+          <div class="step-title" data-en="Run Leaner. Earn More." data-es="Opera Más Eficiente. Gana Más.">Run Leaner. Earn More.</div>
+          <p data-en="Your AI layer goes live and starts compounding immediately. Less overhead. Faster decisions. More revenue from the same inputs. Most clients see meaningful efficiency gains in week one and hit full stride at 30–45 days."
+             data-es="Tu capa de IA se activa y empieza a capitalizar de inmediato. Menos gastos generales. Decisiones más rápidas. Más ingresos de los mismos recursos. La mayoría de clientes ve mejoras significativas en la primera semana.">Your AI layer goes live and starts compounding immediately. Less overhead. Faster decisions. More revenue from the same inputs. Most clients see meaningful efficiency gains in week one and hit full stride at 30–45 days.</p>
+          <div class="step-guarantee" data-en="Avg. +$18K/mo added. Ops costs down. Margins up." data-es="Promedio +$18K/mes añadidos. Costos operativos abajo. Márgenes arriba.">Avg. +$18K/mo added. Ops costs down. Margins up.</div>
+        </div>
+      </div>
+      <div class="process-step rv d4">
+        <div class="step-num-wrap"><div class="step-num">04</div></div>
+        <div class="step-body">
+          <div class="step-tag" data-en="ONGOING" data-es="CONTINUO">ONGOING</div>
+          <div class="step-title" data-en="Scale & Optimize" data-es="Escalar y Optimizar">Scale & Optimize</div>
+          <p data-en="We monitor results, eliminate bottlenecks, and continuously optimize so your ROI compounds over time. Your AI layer doesn't just maintain — it improves, expands, and builds leverage with every passing month."
+             data-es="Monitoreamos resultados, eliminamos cuellos de botella y optimizamos continuamente para que tu ROI se capitalice con el tiempo. Tu capa de IA no solo se mantiene — mejora, se expande y construye apalancamiento.">We monitor results, eliminate bottlenecks, and continuously optimize so your ROI compounds over time. Your AI layer doesn't just maintain — it improves, expands, and builds leverage with every passing month.</p>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
+
+<!-- INDUSTRIES HORIZONTAL SCROLL -->
+<section id="industries">
+  <div class="industries-header rv">
+    <div class="container">
+      <span class="section-label" data-en="INDUSTRIES" data-es="INDUSTRIAS">INDUSTRIES</span>
+      <h2 class="section-h2" data-en="Built for Your Industry." data-es="Construido para Tu Industria.">Built for Your Industry.</h2>
+      <p class="section-sub" data-en="Different operations. Different pain points. Same result: more revenue, less overhead." data-es="Diferentes operaciones. Diferentes puntos de dolor. El mismo resultado: más ingresos, menos gastos.">Different operations. Different pain points. Same result: more revenue, less overhead.</p>
+    </div>
+  </div>
+  <div class="ind-scroll-wrap rv d1">
+    <div class="ind-track">
+      <div class="ind-card">
+        <div class="ind-icon">🏗️</div>
+        <div class="ind-name" data-en="Construction" data-es="Construcción">Construction</div>
+        <div class="ind-body" data-en="AI-powered estimating, job scheduling, and client follow-up. Every quote followed up. Every job tracked. Every subcontractor coordinated — automatically." data-es="Estimaciones, programación de trabajos y seguimiento de clientes con IA. Cada cotización con seguimiento. Cada trabajo rastreado. Cada subcontratista coordinado — automáticamente.">AI-powered estimating, job scheduling, and client follow-up. Every quote followed up. Every job tracked. Every subcontractor coordinated — automatically.</div>
+        <div class="ind-results">
+          <div class="ind-result" data-en="+34% faster quote-to-close" data-es="+34% más rápido de cotización a cierre">+34% faster quote-to-close</div>
+          <div class="ind-result" data-en="Zero missed follow-ups" data-es="Cero seguimientos perdidos">Zero missed follow-ups</div>
+          <div class="ind-result" data-en="AI job scheduling & dispatch" data-es="Programación y despacho con IA">AI job scheduling & dispatch</div>
+        </div>
+      </div>
+      <div class="ind-card">
+        <div class="ind-icon">🏨</div>
+        <div class="ind-name" data-en="Hospitality" data-es="Hospitalidad">Hospitality</div>
+        <div class="ind-body" data-en="AI concierge, automated reservations, upsell sequences, and reputation management. More bookings. Higher average spend. Fewer staff hours spent on repetitive tasks." data-es="Conserje IA, reservas automatizadas, secuencias de upsell y gestión de reputación. Más reservas. Mayor gasto promedio. Menos horas de personal en tareas repetitivas.">AI concierge, automated reservations, upsell sequences, and reputation management. More bookings. Higher average spend. Fewer staff hours spent on repetitive tasks.</div>
+        <div class="ind-results">
+          <div class="ind-result" data-en="AI reservation & upsell system" data-es="Sistema de reservas y upsell con IA">AI reservation & upsell system</div>
+          <div class="ind-result" data-en="+28% average ticket increase" data-es="+28% aumento en ticket promedio">+28% average ticket increase</div>
+          <div class="ind-result" data-en="Automated review management" data-es="Gestión de reseñas automatizada">Automated review management</div>
+        </div>
+      </div>
+      <div class="ind-card">
+        <div class="ind-icon">📱</div>
+        <div class="ind-name" data-en="Marketing Agencies" data-es="Agencias de Marketing">Marketing Agencies</div>
+        <div class="ind-body" data-en="AI client onboarding, automated reporting, content production at scale, and lead generation systems. Serve more clients with the same team. Margins go up. Burnout goes down." data-es="Onboarding de clientes con IA, reportes automatizados, producción de contenido a escala y sistemas de generación de leads. Atiende más clientes con el mismo equipo.">AI client onboarding, automated reporting, content production at scale, and lead generation systems. Serve more clients with the same team. Margins go up. Burnout goes down.</div>
+        <div class="ind-results">
+          <div class="ind-result" data-en="5× client capacity, same headcount" data-es="5× capacidad de clientes, mismo equipo">5× client capacity, same headcount</div>
+          <div class="ind-result" data-en="Automated client reporting" data-es="Reportes de clientes automatizados">Automated client reporting</div>
+          <div class="ind-result" data-en="AI-generated content at scale" data-es="Contenido generado con IA a escala">AI-generated content at scale</div>
+        </div>
+      </div>
+      <div class="ind-card">
+        <div class="ind-icon">💻</div>
+        <div class="ind-name" data-en="Tech / SaaS" data-es="Tech / SaaS">Tech / SaaS</div>
+        <div class="ind-body" data-en="AI-powered sales workflows, automated onboarding sequences, churn prediction, and ops intelligence dashboards. Move faster. Close more. Retain longer." data-es="Flujos de ventas con IA, secuencias de onboarding automatizadas, predicción de churn y dashboards de inteligencia operativa. Muévete más rápido. Cierra más. Retén por más tiempo.">AI-powered sales workflows, automated onboarding sequences, churn prediction, and ops intelligence dashboards. Move faster. Close more. Retain longer.</div>
+        <div class="ind-results">
+          <div class="ind-result" data-en="AI sales & onboarding automation" data-es="Automatización de ventas y onboarding con IA">AI sales & onboarding automation</div>
+          <div class="ind-result" data-en="Churn prediction & intervention" data-es="Predicción e intervención de churn">Churn prediction & intervention</div>
+          <div class="ind-result" data-en="Full ops intelligence layer" data-es="Capa de inteligencia operativa completa">Full ops intelligence layer</div>
+        </div>
+      </div>
+      <div class="ind-card">
+        <div class="ind-icon">🏥</div>
+        <div class="ind-name" data-en="Home Services" data-es="Servicios del Hogar">Home Services</div>
+        <div class="ind-body" data-en="AI intake, automated quote follow-up, scheduling, and review generation. Never miss a lead. Every job booked. Every customer followed up." data-es="Intake IA, seguimiento de cotizaciones automatizado, programación y generación de reseñas. Nunca pierdas un lead. Cada trabajo reservado. Cada cliente con seguimiento.">AI intake, automated quote follow-up, scheduling, and review generation. Never miss a lead. Every job booked. Every customer followed up.</div>
+        <div class="ind-results">
+          <div class="ind-result" data-en="AI intake — zero missed leads" data-es="Intake IA — cero leads perdidos">AI intake — zero missed leads</div>
+          <div class="ind-result" data-en="Automated quote follow-up sequences" data-es="Secuencias de seguimiento de cotizaciones">Automated quote follow-up</div>
+          <div class="ind-result" data-en="Review & reputation automation" data-es="Automatización de reseñas y reputación">Review & reputation automation</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- FINAL CTA -->
 <section id="cta">
-<div class="container">
-  <div class="cta-pill" data-en="🔴 We take 5 clients/month. 2 spots open for April." data-es="🔴 Tomamos 5 clientes/mes. 2 lugares disponibles para Abril.">🔴 We take 5 clients/month. 2 spots open for April.</div>
-  <h2 data-en="One Conversation. Infinite Leverage." data-es="Una Conversación. Apalancamiento Infinito.">One Conversation. Infinite Leverage.</h2>
-  <div class="cta-guarantee" data-en="💰 Book your free AI Growth Audit. We'll show you exactly where AI multiplies your business — in dollars. If we can't find $10K/mo in untapped leverage, we won't work together. No risk on your side." data-es="💰 Reserva tu Auditoría de Crecimiento IA gratuita. Te mostraremos exactamente dónde la IA multiplica tu negocio — en dólares. Si no encontramos $10K/mes en apalancamiento sin aprovechar, no trabajaremos juntos. Sin riesgo para ti.">💰 Book your free AI Growth Audit. We'll show you exactly where AI multiplies your business — in dollars. If we can't find $10K/mo in untapped leverage, we won't work together. No risk on your side.</div>
-  <a href="mailto:info@xgncorp.com" class="btn-black magnetic" data-en="⚡ Book Your Free AI Growth Audit" data-es="⚡ Reserva Tu Auditoría de Crecimiento IA Gratis">⚡ Book Your Free AI Growth Audit</a>
-  <div class="cta-micro" data-en="No contracts. No complexity. Just leverage." data-es="Sin contratos. Sin complejidad. Solo apalancamiento.">No contracts. No complexity. Just leverage.</div>
-</div>
+  <div class="container">
+    <div class="cta-inner rv">
+      <div class="cta-pill" data-en="🔴 We take 5 clients/month. 2 spots open for April." data-es="🔴 Tomamos 5 clientes/mes. 2 lugares disponibles para Abril.">🔴 We take 5 clients/month. 2 spots open for April.</div>
+      <h2 class="section-h2" data-en="One Conversation. Infinite Leverage." data-es="Una Conversación. Apalancamiento Infinito.">One Conversation. Infinite Leverage.</h2>
+      <div class="cta-guarantee">
+        <span data-en="💰 Book your free AI Growth Audit. We'll show you exactly where AI multiplies your business — in dollars. If we can't find $10K/mo in untapped leverage, we won't work together. No risk on your side."
+              data-es="💰 Reserva tu Auditoría de Crecimiento IA gratuita. Te mostraremos exactamente dónde la IA multiplica tu negocio — en dólares. Si no encontramos $10K/mes en apalancamiento sin aprovechar, no trabajaremos juntos. Sin riesgo para ti.">
+          💰 Book your free AI Growth Audit. We'll show you exactly where AI multiplies your business — in dollars. If we can't find $10K/mo in untapped leverage, we won't work together. No risk on your side.
+        </span>
+      </div>
+      <div class="cta-btn-wrap">
+        <a href="mailto:info@xgncorp.com" class="btn-black magnetic" data-en="⚡ Book Your Free AI Growth Audit" data-es="⚡ Reserva Tu Auditoría de Crecimiento IA Gratis">⚡ Book Your Free AI Growth Audit</a>
+      </div>
+      <p class="cta-micro" data-en="No contracts. No complexity. Just leverage." data-es="Sin contratos. Sin complejidad. Solo apalancamiento.">No contracts. No complexity. Just leverage.</p>
+    </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-<div class="container footer-inner">
-  <div class="footer-logo"><span>XGN</span><span>— X GROWTH NETWORK</span></div>
-  <div class="footer-copy" data-en="© 2026 XGN — X Growth Network — All Rights Reserved" data-es="© 2026 XGN — X Growth Network — Todos los Derechos Reservados">© 2026 XGN — X Growth Network — All Rights Reserved</div>
-  <a href="mailto:info@xgncorp.com" class="footer-email">info@xgncorp.com</a>
-</div>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="footer-logo-x">XGN</span>
+        <span class="footer-logo-s" data-en="— X GROWTH NETWORK" data-es="— X GROWTH NETWORK">— X GROWTH NETWORK</span>
+      </div>
+      <span class="footer-copy" data-en="© 2026 XGN — X Growth Network. All Rights Reserved." data-es="© 2026 XGN — X Growth Network. Todos los Derechos Reservados.">© 2026 XGN — X Growth Network. All Rights Reserved.</span>
+      <a href="mailto:info@xgncorp.com" class="footer-email">info@xgncorp.com</a>
+    </div>
+  </div>
 </footer>
 
 <script>
 'use strict';
 
-// ── Lang ──────────────────────────────────────────
-let lang = 'en';
+// ── Lang ──────────────────────────────────────────────────────────────
+let currentLang = 'en';
 function setLang(l) {
-  lang = l;
-  document.getElementById('btnEN').classList.toggle('active', l==='en');
-  document.getElementById('btnES').classList.toggle('active', l==='es');
+  currentLang = l;
+  document.getElementById('btnEN').classList.toggle('on', l==='en');
+  document.getElementById('btnES').classList.toggle('on', l==='es');
   document.querySelectorAll('[data-en]').forEach(el => {
     const v = el.getAttribute('data-'+l);
     if (v == null) return;
     if (el.tagName==='INPUT'||el.tagName==='TEXTAREA') el.placeholder = v;
     else el.textContent = v;
   });
-  // rebuild word reveal
-  const ch = document.getElementById('costHeadline');
-  if (ch) { buildWordReveal(ch, ch.getAttribute('data-'+l)); ch.querySelectorAll('.w').forEach(w=>w.classList.add('in')); }
 }
 
-// ── Reveal ────────────────────────────────────────
+// ── Reveal ────────────────────────────────────────────────────────────
 const ro = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.rv').forEach(el => ro.observe(el));
 
-// ── Count-up ──────────────────────────────────────
-function runCountUp(el) {
-  const t = +el.dataset.target, pre = el.dataset.prefix||'', suf = el.dataset.suffix||'';
-  const d = 1800, s = performance.now();
+// ── Count-up ──────────────────────────────────────────────────────────
+function countUp(el) {
+  const target = +el.dataset.target;
+  const dur = 1800, start = performance.now();
   (function tick(now) {
-    const p = Math.min((now-s)/d, 1), e = 1-Math.pow(1-p,3);
-    el.textContent = pre + Math.floor(e*t).toLocaleString() + suf;
-    if (p<1) requestAnimationFrame(tick); else el.textContent = pre + t.toLocaleString() + suf;
+    const p = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.floor(ease * target).toLocaleString();
+    if (p < 1) requestAnimationFrame(tick);
+    else el.textContent = target.toLocaleString();
   })(performance.now());
 }
-const co = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { runCountUp(e.target); co.unobserve(e.target); } });
-}, { threshold: 0.3 });
-document.querySelectorAll('.count-up').forEach(el => co.observe(el));
+const cuObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { countUp(e.target); cuObs.unobserve(e.target); } });
+}, { threshold: 0.4 });
+document.querySelectorAll('.cu').forEach(el => cuObs.observe(el));
 
-// ── Loss counter ──────────────────────────────────
-let lv=0, la=false;
-const le = document.getElementById('lossCounter');
-function tickLoss() { lv+=0.006; le.textContent='$'+lv.toFixed(2); requestAnimationFrame(tickLoss); }
-if (le) { const lo = new IntersectionObserver(([e])=>{ if(e.isIntersecting&&!la){la=true;tickLoss();lo.disconnect();} },{threshold:0.3}); lo.observe(le); }
+// ── Loss counter ──────────────────────────────────────────────────────
+let lossVal = 0, lossStarted = false;
+const lossEl = document.getElementById('lossCounter');
+function tickLoss() { lossVal += 0.006; lossEl.textContent = '$' + lossVal.toFixed(2); requestAnimationFrame(tickLoss); }
+if (lossEl) {
+  const lossObs = new IntersectionObserver(([e]) => {
+    if (e.isIntersecting && !lossStarted) { lossStarted = true; tickLoss(); lossObs.disconnect(); }
+  }, { threshold: 0.3 });
+  lossObs.observe(lossEl);
+}
 
-// ── Magnetic ──────────────────────────────────────
+// ── ROI Fill ──────────────────────────────────────────────────────────
+const roiFill = document.getElementById('roiFill');
+if (roiFill) {
+  const roiObs = new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) { roiFill.style.width = '85%'; roiObs.disconnect(); }
+  }, { threshold: 0.3 });
+  roiObs.observe(roiFill);
+}
+
+// ── Hero panel log lines animate in ──────────────────────────────────
+setTimeout(() => { document.getElementById('ll1')?.classList.add('in'); }, 600);
+setTimeout(() => { document.getElementById('ll2')?.classList.add('in'); }, 1100);
+setTimeout(() => { document.getElementById('ll3')?.classList.add('in'); }, 1600);
+
+// ── Systems tabs ──────────────────────────────────────────────────────
+function toggleSys(idx) {
+  document.querySelectorAll('.sys-item').forEach((el, i) => el.classList.toggle('active', i===idx));
+  document.querySelectorAll('.sys-detail').forEach((el, i) => el.classList.toggle('open', i===idx));
+}
+
+// ── Magnetic buttons ──────────────────────────────────────────────────
 document.querySelectorAll('.magnetic').forEach(btn => {
   btn.addEventListener('mousemove', e => {
     const r = btn.getBoundingClientRect();
-    btn.style.transform = `translate(${(e.clientX-r.left-r.width/2)*0.25}px,${(e.clientY-r.top-r.height/2)*0.25}px)`;
+    const x = (e.clientX - r.left - r.width/2) * 0.22;
+    const y = (e.clientY - r.top - r.height/2) * 0.22;
+    btn.style.transform = `translate(${x}px,${y}px)`;
   });
-  btn.addEventListener('mouseleave', ()=>{ btn.style.transform=''; });
+  btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
 });
 
-// ── Smooth scroll ─────────────────────────────────
+// ── Nav scroll ────────────────────────────────────────────────────────
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('sc', scrollY > 40), { passive: true });
+
+// ── Smooth scroll ─────────────────────────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); window.scrollTo({top:t.offsetTop-72,behavior:'smooth'}); }
-    // close mobile menu
-    const mm = document.getElementById('mobile-menu');
-    if (mm) mm.classList.remove('open');
+    if (t) { e.preventDefault(); window.scrollTo({ top: t.offsetTop - 72, behavior: 'smooth' }); }
   });
 });
 
-// ── Nav scroll ────────────────────────────────────
-const nav = document.getElementById('navbar');
-window.addEventListener('scroll', ()=>nav.classList.toggle('scrolled',scrollY>40), {passive:true});
-
-// ── Mobile menu ───────────────────────────────────
+// ── Mobile menu ───────────────────────────────────────────────────────
 const ham = document.getElementById('ham');
-const mm = document.getElementById('mobile-menu');
-if (ham) ham.addEventListener('click', ()=>mm.classList.toggle('open'));
+const mobMenu = document.getElementById('mob-menu');
+if (ham) ham.addEventListener('click', () => mobMenu.classList.toggle('open'));
+document.querySelectorAll('#mob-menu a').forEach(a => a.addEventListener('click', () => mobMenu.classList.remove('open')));
 
-// ── Word reveal ───────────────────────────────────
-function buildWordReveal(el, text) {
-  el.innerHTML = (text||el.textContent).trim().split(' ')
-    .map((w,i)=>`<span class="w" style="transition-delay:${i*0.065}s">${w}</span>`).join(' ');
-}
+// ── Word reveal for cost headline ─────────────────────────────────────
 const ch = document.getElementById('costHeadline');
 if (ch) {
-  buildWordReveal(ch);
-  const wo = new IntersectionObserver(([e])=>{ if(e.isIntersecting){e.target.querySelectorAll('.w').forEach(w=>w.classList.add('in'));wo.disconnect();} },{threshold:0.2});
-  wo.observe(ch);
+  const words = ch.textContent.trim().split(' ');
+  ch.innerHTML = words.map((w, i) =>
+    `<span class="w" style="transition-delay:${i*0.065}s">${w}</span>`
+  ).join(' ');
+  const wObs = new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) { e.target.querySelectorAll('.w').forEach(w => w.classList.add('in')); wObs.disconnect(); }
+  }, { threshold: 0.2 });
+  wObs.observe(ch);
 }
-
-// ── ROI bar ───────────────────────────────────────
-const rb = document.getElementById('roiBar');
-if (rb) { const rbo = new IntersectionObserver(([e])=>{ if(e.isIntersecting){rb.style.width='85%';rbo.disconnect();} },{threshold:0.3}); rbo.observe(rb); }
 </script>
 </body>
 </html>
