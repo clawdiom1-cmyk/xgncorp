@@ -32,6 +32,7 @@
     font-family: 'DM Sans', sans-serif;
     font-weight: 400;
     overflow-x: hidden;
+    line-height: 1.7;
   }
 
   /* ========== TICKER ========== */
@@ -107,7 +108,7 @@
   }
 
   #navbar.scrolled {
-    background: rgba(0,0,0,0.92);
+    background: rgba(10,10,10,0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(245,192,0,0.15);
@@ -201,7 +202,7 @@
     border-radius: 4px;
     text-decoration: none;
     letter-spacing: 0.04em;
-    transition: background 0.2s, transform 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     white-space: nowrap;
   }
 
@@ -290,7 +291,7 @@
   }
 
   /* ========== GLOBAL LAYOUT ========== */
-  .section-pad { padding: 100px 5%; }
+  .section-pad { padding: 120px 24px; }
 
   .container { max-width: 1200px; margin: 0 auto; }
 
@@ -451,7 +452,7 @@
     border-radius: 4px;
     text-decoration: none;
     letter-spacing: 0.04em;
-    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     align-self: flex-start;
     position: relative;
     overflow: hidden;
@@ -459,7 +460,7 @@
 
   .btn-gold:hover {
     background: var(--gold-dim);
-    box-shadow: 0 12px 40px rgba(245,192,0,0.4);
+    box-shadow: 0 0 40px rgba(245, 192, 0, 0.4), 0 8px 32px rgba(245, 192, 0, 0.2);
     transform: translateY(-2px);
   }
 
@@ -599,9 +600,10 @@
   /* ========== COST OF INACTION ========== */
   #cost {
     background: var(--black);
-    padding: 100px 5%;
+    padding: 120px 5%;
     position: relative;
     overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.05);
   }
 
   .moving-grid {
@@ -686,11 +688,16 @@
   .pain-cards { display: flex; flex-direction: column; gap: 20px; }
 
   .pain-card {
-    background: var(--black3);
+    background: rgba(255,255,255,0.03);
     border-left: 3px solid var(--orange);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
     padding: 24px 28px;
     border-radius: 0 8px 8px 0;
     transition: transform 0.2s, box-shadow 0.2s;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   .pain-card:hover {
@@ -716,7 +723,7 @@
   /* ========== WHAT WE BUILD ========== */
   #features {
     background: var(--black2);
-    padding: 100px 5% 100px;
+    padding: 120px 5% 120px;
     clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
     margin-top: -40px;
   }
@@ -796,16 +803,18 @@
 
   /* FEATURE VISUALS */
   .feature-visual {
-    background: var(--black3);
+    background: rgba(255,255,255,0.03);
     border-radius: 16px;
     padding: 32px;
-    border: 1px solid rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.08);
     min-height: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   /* Phone Mock */
@@ -991,11 +1000,13 @@
   /* Dashboard Mock */
   .dashboard-mock {
     width: 240px;
-    background: var(--black3);
+    background: rgba(255,255,255,0.03);
     border-radius: 12px;
     padding: 20px;
     border: 1px solid rgba(255,255,255,0.08);
     box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   .dash-title {
@@ -1048,10 +1059,11 @@
 
   /* ========== TRANSFORMATION ========== */
   #transformation {
-    padding: 100px 5%;
+    padding: 120px 5%;
     background: var(--black);
     position: relative;
     overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.05);
   }
 
   .transform-bg-left {
@@ -1200,7 +1212,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 80px 5%;
+    padding: 120px 5%;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -1263,8 +1275,10 @@
     text-align: center;
     padding: 24px 16px;
     background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 12px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   .number-metric-val {
@@ -1284,7 +1298,7 @@
   /* ========== HOW IT WORKS ========== */
   #process {
     background: var(--black2);
-    padding: 100px 5%;
+    padding: 120px 5%;
     clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
     margin-top: -40px;
   }
@@ -1366,7 +1380,8 @@
   /* ========== TESTIMONIALS ========== */
   #testimonials {
     background: var(--black);
-    padding: 100px 5%;
+    padding: 120px 5%;
+    border-top: 1px solid rgba(255,255,255,0.05);
   }
 
   .testimonials-headline {
@@ -1385,13 +1400,15 @@
   }
 
   .testi-card {
-    background: var(--black3);
-    border: 1px solid rgba(255,255,255,0.07);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 16px;
     padding: 36px 32px;
     transition: transform 0.1s ease, box-shadow 0.2s;
     cursor: default;
     transform-style: preserve-3d;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   .testi-card:hover {
@@ -1454,10 +1471,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 100px 5%;
+    padding: 120px 5%;
     text-align: center;
     position: relative;
     overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.05);
   }
 
   .final-glow {
@@ -1532,7 +1550,7 @@
     border-radius: 4px;
     text-decoration: none;
     letter-spacing: 0.04em;
-    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     z-index: 2;
     display: inline-flex;
@@ -1543,7 +1561,7 @@
   .final-cta-btn:hover {
     background: var(--gold-dim);
     transform: translateY(-3px);
-    box-shadow: 0 16px 60px rgba(245,192,0,0.5);
+    box-shadow: 0 0 40px rgba(245, 192, 0, 0.4), 0 8px 32px rgba(245, 192, 0, 0.2);
   }
 
   .final-micro {
@@ -1589,6 +1607,164 @@
 
   .footer-email:hover { opacity: 0.7; }
 
+  /* ========== STRIPE POLISH: TYPOGRAPHY & GLOWS ========== */
+  .cost-headline,
+  .features-headline,
+  .transform-headline,
+  .process-headline,
+  .testimonials-headline,
+  .final-headline {
+    letter-spacing: -0.02em;
+  }
+
+  .section-intro {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  /* Subtle radial accent glows on CTA/hero sections */
+  #final-cta::before {
+    content: '';
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245, 192, 0, 0.04) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  #cost::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245, 192, 0, 0.03) 0%, transparent 70%);
+    top: 20%;
+    right: -200px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* ========== PROCESS PHASES SECTION ========== */
+  #phases {
+    background: var(--black);
+    padding: 120px 5%;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #phases::before {
+    content: '';
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245, 192, 0, 0.03) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .phases-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .phases-headline {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(2rem, 4.5vw, 4rem);
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .phases-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: var(--muted);
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 72px;
+    line-height: 1.7;
+  }
+
+  .phases-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .phase-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 12px 12px 0;
+    padding: 36px 32px;
+    position: relative;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .phase-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  }
+
+  .phase-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .phase-arrow {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.2rem;
+    color: var(--gold);
+    opacity: 0.5;
+  }
+
+  .phase-title {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(1.3rem, 2vw, 1.8rem);
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  .phase-body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 900px) {
+    .phases-grid { grid-template-columns: 1fr; }
+  }
+
   /* ========== REVEAL ANIMATIONS ========== */
   .reveal-up {
     opacity: 0;
@@ -1612,6 +1788,15 @@
     opacity: 0;
     transform: scale(0.92);
     transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal-fade {
+    opacity: 0;
+    transition: opacity 0.7s ease;
+  }
+
+  .in-view.reveal-fade {
+    opacity: 1;
   }
 
   .in-view.reveal-up,
@@ -1778,7 +1963,7 @@
 <section id="cost">
   <div class="moving-grid"></div>
   <div class="container">
-    <h2 class="cost-headline" id="costHeadline" data-en="Right now, your business is leaking leverage everywhere." data-es="Ahora mismo, tu negocio está perdiendo apalancamiento por todas partes.">Right now, your business is leaking leverage everywhere.</h2>
+    <h2 class="cost-headline reveal-up" id="costHeadline" data-en="Right now, your business is leaking leverage everywhere." data-es="Ahora mismo, tu negocio está perdiendo apalancamiento por todas partes.">Right now, your business is leaking leverage everywhere.</h2>
 
     <div class="cost-grid">
       <!-- LEFT: Loss counter -->
@@ -2041,7 +2226,7 @@
     <div class="process-steps">
       <div class="process-line"></div>
 
-      <div class="process-step reveal-left">
+      <div class="process-step reveal-up">
         <div class="step-number">01</div>
         <div class="step-content">
           <h3 class="step-title" data-en="Free AI Growth Audit" data-es="Auditoría de Crecimiento IA Gratis">Free AI Growth Audit</h3>
@@ -2053,7 +2238,7 @@
         </div>
       </div>
 
-      <div class="process-step reveal-left stagger-2">
+      <div class="process-step reveal-up stagger-2">
         <div class="step-number">02</div>
         <div class="step-content">
           <h3 class="step-title" data-en="We Build Your AI Layer" data-es="Construimos Tu Capa de IA">We Build Your AI Layer</h3>
@@ -2065,7 +2250,7 @@
         </div>
       </div>
 
-      <div class="process-step reveal-left stagger-3">
+      <div class="process-step reveal-up stagger-3">
         <div class="step-number">03</div>
         <div class="step-content">
           <h3 class="step-title" data-en="Run Leaner. Earn More." data-es="Opera Más Eficiente. Gana Más.">Run Leaner. Earn More.</h3>
@@ -2125,15 +2310,53 @@
   </div>
 </section>
 
+<!-- ========== FOUR PHASES ========== -->
+<section id="phases">
+  <div class="container">
+    <div class="phases-label reveal-up" data-en="HOW WE WORK" data-es="CÓMO TRABAJAMOS">HOW WE WORK</div>
+    <h2 class="phases-headline reveal-up stagger-1" data-en="Four Phases. Infinite Leverage." data-es="Cuatro Fases. Apalancamiento Infinito.">Four Phases. Infinite Leverage.</h2>
+    <p class="phases-sub reveal-up stagger-2" data-en="Every XGN engagement follows the same battle-tested process. No guesswork. No wasted time. Just results." data-es="Cada proyecto de XGN sigue el mismo proceso probado. Sin conjeturas. Sin tiempo perdido. Solo resultados.">Every XGN engagement follows the same battle-tested process. No guesswork. No wasted time. Just results.</p>
+
+    <div class="phases-grid">
+      <div class="phase-card reveal-up stagger-1">
+        <span class="phase-tag" data-en="PHASE 01" data-es="FASE 01">PHASE 01</span>
+        <span class="phase-arrow">→</span>
+        <h3 class="phase-title" data-en="AI Audit" data-es="Auditoría de IA">AI Audit</h3>
+        <p class="phase-body" data-en="We analyze your existing workflows, tech stack, and operations to identify exactly where AI creates the most leverage. You get a clear map of opportunities." data-es="Analizamos tus flujos de trabajo, stack tecnológico y operaciones para identificar exactamente dónde la IA genera más apalancamiento. Obtienes un mapa claro de oportunidades.">We analyze your existing workflows, tech stack, and operations to identify exactly where AI creates the most leverage. You get a clear map of opportunities.</p>
+      </div>
+
+      <div class="phase-card reveal-up stagger-2">
+        <span class="phase-tag" data-en="PHASE 02" data-es="FASE 02">PHASE 02</span>
+        <span class="phase-arrow">↓</span>
+        <h3 class="phase-title" data-en="System Design" data-es="Diseño de Sistema">System Design</h3>
+        <p class="phase-body" data-en="We design a custom AI integration plan built around what you already use. No rip-and-replace. No new software you don't need." data-es="Diseñamos un plan de integración de IA personalizado basado en lo que ya usas. Sin reemplazos. Sin software nuevo que no necesitas.">We design a custom AI integration plan built around what you already use. No rip-and-replace. No new software you don't need.</p>
+      </div>
+
+      <div class="phase-card reveal-up stagger-3">
+        <span class="phase-tag" data-en="PHASE 03" data-es="FASE 03">PHASE 03</span>
+        <span class="phase-arrow">→</span>
+        <h3 class="phase-title" data-en="Build & Deploy" data-es="Construcción e Implementación">Build & Deploy</h3>
+        <p class="phase-body" data-en="We build and deploy the automations directly into your workflows. Your team keeps working — the machine just gets smarter." data-es="Construimos e implementamos las automatizaciones directamente en tus flujos de trabajo. Tu equipo sigue trabajando — la máquina solo se vuelve más inteligente.">We build and deploy the automations directly into your workflows. Your team keeps working — the machine just gets smarter.</p>
+      </div>
+
+      <div class="phase-card reveal-up stagger-4">
+        <span class="phase-tag" data-en="PHASE 04" data-es="FASE 04">PHASE 04</span>
+        <h3 class="phase-title" data-en="Scale & Optimize" data-es="Escalar y Optimizar">Scale & Optimize</h3>
+        <p class="phase-body" data-en="We monitor results, eliminate bottlenecks, and continuously optimize so your ROI compounds over time." data-es="Monitoreamos resultados, eliminamos cuellos de botella y optimizamos continuamente para que tu ROI se capitalice con el tiempo.">We monitor results, eliminate bottlenecks, and continuously optimize so your ROI compounds over time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ========== FINAL CTA ========== -->
 <section id="final-cta">
   <div class="final-glow"></div>
 
-  <div class="urgency-pill" data-en="🔴 We take 5 clients/month. 2 spots open for April." data-es="🔴 Tomamos 5 clientes/mes. 2 lugares disponibles para Abril.">🔴 We take 5 clients/month. 2 spots open for April.</div>
+  <div class="urgency-pill reveal-up" data-en="🔴 We take 5 clients/month. 2 spots open for April." data-es="🔴 Tomamos 5 clientes/mes. 2 lugares disponibles para Abril.">🔴 We take 5 clients/month. 2 spots open for April.</div>
 
-  <h2 class="final-headline" data-en="One Conversation. Infinite Leverage." data-es="Una Conversación. Apalancamiento Infinito.">One Conversation. Infinite Leverage.</h2>
+  <h2 class="final-headline reveal-up stagger-1" data-en="One Conversation. Infinite Leverage." data-es="Una Conversación. Apalancamiento Infinito.">One Conversation. Infinite Leverage.</h2>
 
-  <div class="guarantee-box">
+  <div class="guarantee-box reveal-up stagger-2">
     <p data-en="💰 Book your free AI Growth Audit. We'll show you exactly where AI multiplies your business — in dollars. If we can't find $10K/mo in untapped leverage, we won't work together. No risk on your side." data-es="💰 Reserva tu Auditoría de Crecimiento IA gratuita. Te mostraremos exactamente dónde la IA multiplica tu negocio — en dólares. Si no encontramos $10K/mes en apalancamiento sin aprovechar, no trabajaremos juntos. Sin riesgo para ti.">💰 Book your free AI Growth Audit. We'll show you exactly where AI multiplies your business — in dollars. If we can't find $10K/mo in untapped leverage, we won't work together. No risk on your side.</p>
   </div>
 
@@ -2289,7 +2512,7 @@
     });
   }, { threshold: 0.12 });
 
-  document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+  document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-fade').forEach(el => {
     revealObserver.observe(el);
   });
 
@@ -2429,4 +2652,3 @@
 </script>
 </body>
 </html>
-<!-- cache-bust: 1775173039 -->
